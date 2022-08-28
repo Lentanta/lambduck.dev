@@ -1,0 +1,8 @@
+@mixin custom-text-style($font-family: "Cozette", $font-size: 1.2em, $color) {
+  font-family: $font-family;
+  font-size: $font-size;
+  color: $color;
+ 
+  letter-spacing: 1px;
+  line-height: 1.3em;
+}

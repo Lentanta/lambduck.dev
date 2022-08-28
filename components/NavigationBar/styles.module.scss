@@ -1,0 +1,39 @@
+@import "../../styles/gruvbox.scss";
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  background-color: $gb-dm-bg4;
+  margin: 10px;
+
+  .pageName {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+
+    padding: 5px 10px;
+
+    font-family: "Cozette";
+    letter-spacing: 1px;
+    font-size: 1.6em;
+
+
+    background-color: $gb-dm-light-blue;
+  }
+}
+
+.linkGroup {
+  display: flex;
+  align-items: center;
+  
+  padding: 5px 10px;
+
+  .link {
+    font-family: "Cozette";
+    letter-spacing: 1px;
+    font-size: 1.2em;
+    color: $gb-dm-fg0;
+
+    margin-right: 10px;
+  }
+}

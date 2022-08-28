@@ -1,0 +1,21 @@
+@import "../styles/gruvbox.scss";
+@import "../styles/global-style.scss";
+
+.bigTitle {
+  @include custom-text-style("Cozette", 1.7em, $gb-dm-light-gray);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.text {
+  @include custom-text-style("Cozette", 1.2em, $gb-dm-light-gray);
+  text-align: center;
+}
+
+.orangeText {
+  color: $gb-dm-light-orange;
+}
+
+.aquaText {
+  color: $gb-dm-light-aqua;
+}
