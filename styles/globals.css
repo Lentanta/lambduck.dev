@@ -48,6 +48,7 @@ table {
 	border-spacing: 0;
 }
 
+/* My custom font */
 @font-face {
   font-family: "Cozette";
   src: url("/fonts/Cozette.otf");

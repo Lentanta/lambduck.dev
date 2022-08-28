@@ -2,7 +2,6 @@ import styles from "./styles.module.scss";
 
 export const NavigationBar = () => {
 
-
 	return (
 		<nav className={styles.navigation}>
 			<div className={styles.pageName}>

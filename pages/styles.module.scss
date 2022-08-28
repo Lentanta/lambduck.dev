@@ -2,13 +2,17 @@
 @import "../styles/global-style.scss";
 
 .bigTitle {
-  @include custom-text-style("Cozette", 1.7em, $gb-dm-light-gray);
+  @include custom-text-style("Cozette", 2em, $gb-dm-light-gray);
   text-transform: uppercase;
   text-align: center;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 1.3em;
+  }
 }
 
 .text {
-  @include custom-text-style("Cozette", 1.2em, $gb-dm-light-gray);
+  @include normal-text;
   text-align: center;
 }
 
@@ -18,4 +22,8 @@
 
 .aquaText {
   color: $gb-dm-light-aqua;
+}
+
+.intoduceSection {
+  margin-top: 20px;
 }

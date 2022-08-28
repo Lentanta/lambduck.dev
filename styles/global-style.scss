@@ -1,8 +1,21 @@
-@mixin custom-text-style($font-family: "Cozette", $font-size: 1.2em, $color) {
+@import "./gruvbox.scss";
+
+$cozette-font: "Cozette";
+
+@mixin custom-text-style($font-family: "Cozette", $font-size: 1.2em, $color: $gb-dm-light-gray) {
   font-family: $font-family;
   font-size: $font-size;
   color: $color;
- 
+
   letter-spacing: 1px;
   line-height: 1.3em;
+}
+
+@mixin normal-text {
+  @include custom-text-style($cozette-font, 1.2em, $gb-dm-light-gray);
+
+  // For small screen under 768px
+  @media only screen and (max-width: 768px) {
+    @include custom-text-style($cozette-font, 1em, $gb-dm-light-gray)
+  }
 }
