@@ -1,0 +1,9 @@
+@import "@styles/global-style.scss";
+
+.websiteItemContainer {
+  margin: 12px 0;
+}
+.linkItem {
+  @include link;
+  @include normal-text;
+}

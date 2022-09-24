@@ -1,39 +1,48 @@
 @import "../../styles/gruvbox.scss";
+@import "../../styles/global-style.scss";
 
-.navigation {
-  display: flex;
-  justify-content: space-between;
-  background-color: $gb-dm-bg4;
-  margin: 10px;
+.navigationBar {
+  @include custom-flex(flex, space-between, center);
+  background-color: $bg2;
+  margin: 5px;
 
-  .pageName {
-    display: flex;
-    align-items: center;
-    width: fit-content;
+  .leftSection {
+    @include custom-flex(flex, flex-start, center);
 
-    padding: 5px 10px;
+    .pageLogo {
+      display: flex;
+      align-items: center;
+      width: fit-content;
 
-    font-family: "Cozette";
-    letter-spacing: 1px;
-    font-size: 1.6em;
+      padding: 5px 10px;
 
+      font-family: "Cozette";
+      letter-spacing: 1px;
+      font-size: 1.6em;
 
-    background-color: $gb-dm-light-blue;
+      background-color: $light-blue;
+    }
+
+    .pageName {
+      @include custom-flex();
+      @include normal-text();
+
+      margin: auto 10px;
+    }
   }
 }
 
 .linkGroup {
-  display: flex;
-  align-items: center;
-  
-  padding: 5px 10px;
+  margin: 5px;
+  padding: 5px;
+  background-color: $bg2;
 
-  .link {
-    font-family: "Cozette";
-    letter-spacing: 1px;
-    font-size: 1.2em;
-    color: $gb-dm-fg0;
+  .linkItem {
+    padding: 5px;
+    @include normal-text();
 
-    margin-right: 10px;
+    &:hover {
+      background-color: $bg3;
+    }
   }
 }

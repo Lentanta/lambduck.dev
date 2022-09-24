@@ -2,7 +2,7 @@
 @import "../styles/global-style.scss";
 
 .bigTitle {
-  @include custom-text-style("Cozette", 2em, $gb-dm-light-gray);
+  @include custom-text-style("Cozette", 2em, $light-gray);
   text-transform: uppercase;
   text-align: center;
 
@@ -17,11 +17,11 @@
 }
 
 .orangeText {
-  color: $gb-dm-light-orange;
+  color: $light-orange;
 }
 
 .aquaText {
-  color: $gb-dm-light-aqua;
+  color: $light-aqua;
 }
 
 .intoduceSection {

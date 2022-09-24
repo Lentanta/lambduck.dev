@@ -4,7 +4,7 @@ import Head from 'next/head'
 import { MainPageHOC } from '../components/MainPageHOC';
 
 import styles from "./styles.module.scss";
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
 import { SectionWrapper } from '../components/SectionWrapper';
 
 const Home: NextPage = () => {

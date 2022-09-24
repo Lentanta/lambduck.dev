@@ -2,7 +2,9 @@
 
 $cozette-font: "Cozette";
 
-@mixin custom-text-style($font-family: "Cozette", $font-size: 1.2em, $color: $gb-dm-light-gray) {
+$max-width: 1024px;
+
+@mixin custom-text-style($font-family: "Cozette", $font-size: 1.2em, $color: $light-gray) {
   font-family: $font-family;
   font-size: $font-size;
   color: $color;
@@ -11,11 +13,30 @@ $cozette-font: "Cozette";
   line-height: 1.3em;
 }
 
-@mixin normal-text {
-  @include custom-text-style($cozette-font, 1.2em, $gb-dm-light-gray);
+@mixin normal-text($color: $light-gray) {
+  @include custom-text-style($cozette-font, 1.2em, $light-gray);
 
   // For small screen under 768px
   @media only screen and (max-width: 768px) {
-    @include custom-text-style($cozette-font, 1em, $gb-dm-light-gray)
+    @include custom-text-style($cozette-font, 1em, $light-gray)
+  }
+}
+
+@mixin custom-flex($display: "flex",
+  $justify-content: "flex-start",
+  $align-items: "center",
+  $flex-direction: "row"
+
+) {
+  display: $display;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-direction: $flex-direction;
+}
+
+@mixin link {
+  &:hover {
+    color: $dark-blue;
+    text-decoration: underline;
   }
 }

@@ -6,7 +6,6 @@ type propsType = {
 }
 
 export const SectionWrapper = ({ children, sectionTitle }: propsType) => {
-
   const _renderTitle = () => {
     return (
       <div className={styles.sectionTitleContainer}>
