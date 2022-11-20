@@ -5,7 +5,7 @@
   @include custom-flex(flex, center, center);
   background-color: $bg0;
 
-  height: 77px;
+  height: 72px;
   border-bottom: 1px solid $bg3;
 
   .navigationContent {
@@ -20,13 +20,13 @@
     display: flex;
     align-items: center;
     width: fit-content;
-    min-height: 50px;
+    min-height: 42px;
 
-    padding: 0px 25px;
+    padding: 0px 12px;
 
     font-family: "Cozette";
     letter-spacing: 1px;
-    font-size: 27px;
+    font-size: 22px;
     color: $light-blue;
 
     border: 1px solid $light-blue;
@@ -41,7 +41,7 @@
     .linkItem {
       padding: 5px;
       @include normal-text();
-      font-size: 22px;
+      font-size: 20px;
 
       &:hover {
         color: $light-blue;
