@@ -5,60 +5,39 @@ import { MainPageHOC } from "../components/MainPageHOC";
 
 import styles from "./styles.module.scss";
 import { Fragment, useEffect } from "react";
-import { SectionWrapper } from "../components/SectionWrapper";
+import { TopHeaderTitle } from "../components/TopHeaderTitle";
+import { NavigationBar } from "@components/NavigationBar";
 
 const Home: NextPage = () => {
+
+  const rdnNum = Math.floor(Math.random() * 2);
+  const imgUrl = rdnNum > 0
+    ? "url('/images/dalat-light-v1.jpg')"
+    : "url('/images/dalat-v1.jpg')"
+
   return (
-    <div>
+    <div style={{ height: "5000px" }}>
       <Head>
         <title>Lentanta</title>
         <meta name="description" content="Letanta website" />
       </Head>
 
-      <MainPageHOC>
-        <Fragment>
-          <SectionWrapper>
-            <div style={{ padding: "50px 10px" }}>
-              <h1 className={styles.bigTitle}>
-                Hi, my name is{" "}
-                <span className={styles.orangeText}>Lê Thanh Tâm</span>
-              </h1>
+      <NavigationBar />
+      <TopHeaderTitle imageUrl="/images/dalat-v1.jpg"/>
 
-              <section className={styles.intoduceSection}>
-                <p className={styles.text}>Currently, I'm working as a </p>
-                <p className={styles.text}>
-                  full-stack{" "}
-                  <span className={styles.orangeText}>Web developer</span>
-                </p>
-              </section>
+      {/* <div className={styles.headerTitleSection}> */}
+        {/* <div className={styles.headerTitleContent}>
+          <h1 style={{ fontSize: "38px", marginBottom: "20px" }}>Hi, I'm Tam</h1>
+          <p style={{ fontSize: "20px" }}>I'm a full-stack web developer who create some silly useless stuffs for fun. I really curious to learn new things, love drawing, and have a passion for game developement</p>
+        </div> */}
 
-              <section className={styles.intoduceSection}>
-                <p className={styles.text}>
-                  A very{" "}
-                  <span className={styles.aquaText}>curious developer</span> and
-                  have a passion for{" "}
-                  <span className={styles.orangeText}>game developement</span>
-                </p>
-                <p className={styles.text}>
-                  ♥ I also love to draw{" "}
-                  <span className={styles.aquaText}>pixel art</span> ♥
-                </p>
-              </section>
-            </div>
-          </SectionWrapper>
+        {/* <div className={styles.headerShadow} /> */}
 
-          {/* <SectionWrapper sectionTitle="About me">
-            <div style={{ padding: "30px 10px" }}>
-              <section>
-                <p className={styles.text}>Currently, I'm working as a </p>
-                <p className={styles.text}>full-stack <span className={styles.orangeText}>Web developer</span></p>
-              </section>
-            </div>
-          </SectionWrapper> */}
-        </Fragment>
-      </MainPageHOC>
+        
+      {/* </div> */}
+      <footer>
 
-      <footer></footer>
+      </footer>
     </div>
   );
 };

@@ -1,0 +1,58 @@
+@mixin background-opacity($color, $opacity: 1) {
+  // For fallback if broswer not support
+  background: $color;
+  background: rgba($color, $opacity);
+}
+
+.topHeaderTitleWrapper {
+  position: relative;
+
+  margin: auto;
+  min-height: 720px;
+  max-width: 1440px;
+  width: 100%;
+
+  background-image: url("/images/dalat-v1.jpg");
+  // background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @media (width < 768px) {
+    min-height: 520px;
+  }
+}
+
+.headerTitleContentWrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.headerTitleContent {
+  max-width: 600px;
+  margin-left: 10%;
+  margin-top: 5%;
+
+  @include background-opacity(#282828, 0.5);
+  backdrop-filter: blur(2px);
+
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  border-radius: 12px;
+  color: #EBDBB2;
+
+  padding: 30px 35px;
+
+  @media (width < 1024px) {
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (width < 768px) {
+    @include background-opacity(#282828, 0.7);
+    margin-top: 30%;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}

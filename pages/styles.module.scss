@@ -27,3 +27,46 @@
 .intoduceSection {
   margin-top: 20px;
 }
+
+.headerTitleSection {
+  margin: auto;
+  min-height: 720px;
+  max-width: 1440px;
+  width: 100%;
+  position: relative;
+
+  background-image: url("/images/dalat-v1.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+
+  .headerTitleContent {
+    position: absolute;
+    width: 600px;
+    left: 220px;
+    top: 78px;
+
+    background: rgba(40, 40, 40, 0.07);
+    backdrop-filter: blur(2px);
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    border-radius: 4px;;
+
+    padding: 35px 30px;
+  }
+
+  .headerShadow {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+
+    height: 64px;
+    width: 100%;
+
+    background: linear-gradient(180deg,
+        rgba(40, 40, 40, 0) 0%,
+        rgba(40, 40, 40, 0.5) 50%,
+        #282828 100%);
+  }
+}

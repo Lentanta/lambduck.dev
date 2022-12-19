@@ -81,13 +81,11 @@ const SongTemplate = (props: any) => {
           <div className={styles.songImage}>
             <img
               src={previewImg}
-              width="320px"
-              height="320px"
               style={{
                 width: "320px",
                 height: "320px",
                 // objectFit: "cover",
-                borderRadius: "4px",
+                borderRadius: "8px"
               }}
             />
           </div>
