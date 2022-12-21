@@ -8,14 +8,15 @@
   position: relative;
 
   margin: auto;
-  min-height: 720px;
-  max-width: 1440px;
+  min-height: 524px;
+  max-width: 1024px;
   width: 100%;
 
   background-image: url("/images/dalat-v1.jpg");
   // background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
 
   @media (width < 768px) {
     min-height: 520px;
@@ -29,17 +30,17 @@
 }
 
 .headerTitleContent {
-  max-width: 600px;
-  margin-left: 10%;
-  margin-top: 5%;
+  max-width: 632px;
+  margin-left: 50px;
+  margin-top: 50px;
 
-  @include background-opacity(#282828, 0.5);
+  @include background-opacity(#2A363B, 0.6);
   backdrop-filter: blur(2px);
 
   font-family: 'Roboto Slab';
   font-style: normal;
   border-radius: 12px;
-  color: #EBDBB2;
+  color: #FECEA8;
 
   padding: 30px 35px;
 
@@ -50,7 +51,7 @@
   }
 
   @media (width < 768px) {
-    @include background-opacity(#282828, 0.7);
+    @include background-opacity(#2A363B, 0.6);
     margin-top: 30%;
     margin-left: 20px;
     margin-right: 20px;

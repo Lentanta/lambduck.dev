@@ -14,7 +14,7 @@ export const NavigationBar = (props: any) => {
         </div>
 
         <div className={styles.navigationBarContent}>
-          <NavLinkLogo size={40} href="https://github.com/Lentanta" />
+          <NavLinkLogo size={42} href="https://github.com/Lentanta" />
         </div>
       </div>
     </nav>

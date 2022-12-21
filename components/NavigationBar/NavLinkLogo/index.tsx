@@ -13,7 +13,7 @@ export const NavLinkLogo = (props: any) => {
 
   return (
     <Link href={href} target="_blank">
-      <div className={styles.navigationLinkLogo} style={{ padding: `${sizeCalculate}px` }}>
+      <div className={styles.navigationLinkLogo}>
         <Icon iconName="ri-github-fill" size={size} />
       </div>
     </Link>

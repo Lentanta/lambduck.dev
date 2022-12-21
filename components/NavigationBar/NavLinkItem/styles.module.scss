@@ -2,7 +2,7 @@
   font-family: 'Roboto Slab';
   font-style: normal;
   font-size: 20px;
-  color: #EBDBB2;
+  color: #FECEA8;
 }
 
 .navigationLink { 
@@ -10,7 +10,7 @@
   margin-left: 20px;
 
   &:hover {
-    color: #83a598;
+    color: #99B898;
     cursor: pointer;
   }
 }
@@ -18,14 +18,14 @@
 .navigationLinkWithBorder {
   @include font-style();
   
-  border: 2px solid #EBDBB2;
+  border: 2px solid #FECEA8;
   border-radius: 4px;
 
   padding: 15px 20px;
 
   &:hover {
-    color: #83a598;
+    color: #99B898;
     cursor: pointer;
-    border: 2px solid #83a598;
+    border: 2px solid #99B898;
   }
 }
