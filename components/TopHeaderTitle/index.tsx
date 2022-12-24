@@ -1,9 +1,16 @@
-import { Roboto_Slab } from "@next/font/google"
+import { Roboto_Slab, IBM_Plex_Mono, Roboto } from "@next/font/google"
+import styled from "styled-components";
 import styles from "./styles.module.scss";
 
 const robotoSlab = Roboto_Slab({
-  subsets: ["vietnamese"]
-})
+  subsets: ["latin", "vietnamese"]
+});
+
+const StyledH1 = styled.h1`
+  font-size: 48px;
+  margin-bottom: 20px;
+  font-family: ${robotoSlab.style.fontFamily};
+`;
 
 export const TopHeaderTitle = (props: any) => {
   const { imageUrl } = props;
@@ -13,7 +20,7 @@ export const TopHeaderTitle = (props: any) => {
     <div className={styles.topHeaderTitleWrapper} style={{ backgroundImage: backgroundImgUrl }}>
       <div className={styles.headerTitleContentWrapper}>
         <div className={styles.headerTitleContent}>
-          <h1 style={{ fontSize: "38px", marginBottom: "20px", fontFamily: robotoSlab.style.fontFamily }}>Hi, I'm Tâm</h1>
+          <StyledH1>Hi, I'm Tam</StyledH1>
           <p style={{ fontSize: "20px", lineHeight: "normal", fontFamily: robotoSlab.style.fontFamily }}>I'm a full-stack web developer who create some silly useless stuffs for fun. I really curious to learn new things, love drawing, and have a passion for game development</p>
         </div>
       </div>
