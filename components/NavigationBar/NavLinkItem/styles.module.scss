@@ -2,7 +2,7 @@
   font-family: 'Roboto Slab';
   font-style: normal;
   font-size: 20px;
-  color: #FECEA8;
+  color: #EBDBB2;
 }
 
 .navigationLink { 
@@ -18,7 +18,7 @@
 .navigationLinkWithBorder {
   @include font-style();
   
-  border: 2px solid #FECEA8;
+  border: 2px solid #EBDBB2;
   border-radius: 4px;
 
   padding: 15px 20px;

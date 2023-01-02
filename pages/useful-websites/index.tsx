@@ -1,22 +1,52 @@
-import { PageWrapper } from "../../layouts/PageWrapper";
-import { WebsiteItem } from "../../components/WebsiteItem";
+import Link from "next/link"
+import styled from "styled-components";
+
+import { PageWrapper } from "@layouts/PageWrapper";
+
 import { queryNotionDatabase } from "../../utils/queryNotionDatabase";
 import { get } from "radash";
+import { SectionWrapper } from "@layouts/SectionWrapper";
+import { HeaderWrapper } from "@components/HeaderWrapper";
+
+import { Typography } from "@components/Styled/Typography";
+import { color } from "@styles/style-constant";
+
+const StyledBody = styled(Typography.Body)`
+  &:hover {
+    color: #${color.lightBlue};
+  }
+`;
 
 const BlogPage = (props: any) => {
   return (
-    <PageWrapper pageName="Useful websites">
-      {props.listwebsite.map(
-        (item: any) =>
-          !item.isHide && (
-            <WebsiteItem
-              key={item.id}
-              title={item.title}
-              tags={item.tags}
-              url={item.url}
-            />
-          )
-      )}
+    <PageWrapper>
+      <HeaderWrapper imageUrl="/images/dalat-v1.jpg">
+        <Typography.H1>
+          My useful websites
+        </Typography.H1>
+        <Typography.Body>
+          This is my collection of sites that I think is it interesting and may help me in the future.
+        </Typography.Body>
+      </HeaderWrapper>
+
+      <SectionWrapper title="List of websites">
+        {props.listWebsite.map(
+          (item: any) =>
+            !item.isHide && (
+              <Link key={item.key} href={item.url}>
+                <StyledBody>{item.title}</StyledBody>
+                {/* <div>{item.tags[0]}</div> */}
+              </Link>
+
+              // <WebsiteItem
+              //   key={item.id}
+              //   title={item.title}
+              //   tags={item.tags}
+              //   url={item.url}
+              // />
+            )
+        )}
+      </SectionWrapper>
     </PageWrapper>
   );
 };
@@ -26,7 +56,7 @@ export const getServerSideProps = async () => {
   const queryNotionData =
     (await queryNotionDatabase(process.env.NOTION_DATABASE_ID || "")) || [];
 
-  const listwebsite = queryNotionData
+  const listWebsite = queryNotionData
     .map((item: any) => {
       return {
         id: get(item, (obj) => obj.id, "No id"),
@@ -42,10 +72,10 @@ export const getServerSideProps = async () => {
         isHide: get(item, (obj) => obj.properties.hide.checkbox, true),
       };
     })
-    .reverse();
+
 
   const props = {
-    listwebsite,
+    listWebsite: listWebsite.reverse(),
     rawData: queryNotionData,
   };
   return { props };

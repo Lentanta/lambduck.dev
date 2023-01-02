@@ -1,15 +1,36 @@
 import styled from "styled-components";
+import { Typography } from "@components/Styled/Typography";
+import { color, foreground } from "@styles/style-constant"
 
-export const ColorDot = ({ colorHex }: any) => {
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 5px 0;
+`;
+
+const Dot = styled.div<{ hexColor: string }>`
+  height: 32px;
+  width: 32px;
+  background-color: ${props => props.hexColor};
+`;
+
+const BorderContainer = styled.div< { borderColor: string } >`
+  border: 1px solid ${props => props.borderColor};
+  padding: 3px;
+`;
+
+export const ColorDot = ({ hexColor, borderColor }: any) => {
   return (
-    <div style={{ display: "flex", alignItems: "center" }}>
-      <div>
-        <div style={{ height: "32px", width: "32px", borderRadius: "100%", backgroundColor: colorHex }} />
-      </div>
+    <Container>
+      <BorderContainer borderColor={foreground.fg4}>
+        <Dot hexColor={hexColor} />
+      </BorderContainer>
 
-      <div style={{ marginLeft: "7px" }}>
-        {colorHex}
-      </div>
-    </div>
+
+      <Typography.Body>
+        {hexColor}
+      </Typography.Body>
+    </Container>
   )
 }

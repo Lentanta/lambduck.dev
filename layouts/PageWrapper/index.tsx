@@ -1,16 +1,22 @@
-import { NavigationBar } from "@components/NavigationBar"
+import Head from "next/head";
 
-import styles from "./styles.module.scss";
+import { NavigationBar } from "@components/NavigationBar"
+import { MainContainer } from "@components/Styled/MainContainer"
+import { Footer } from "@components/Footer";
 
 export const PageWrapper = (props: any) => {
-  const { children, pageName } = props;
+  const { children } = props;
 
   return (
-    <div>
-      <NavigationBar pageName={pageName}/>
-      <div className={styles.pageWrapperStyle}>
-        {children}
-      </div>
-    </div>
+    <MainContainer>
+      <Head>
+        <title>Lentanta</title>
+        <meta name="description" content="Letanta website" />
+      </Head>
+
+      <NavigationBar />
+      {children}
+      <Footer />
+    </MainContainer>
   )
 };
