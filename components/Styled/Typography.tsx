@@ -1,45 +1,55 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { typography, TypographyProps } from "styled-system";
+
 import { Roboto_Slab } from "@next/font/google"
-import { color, desktopFontSize } from "@styles/style-constant";
+import { colors } from "@styles/style-constant";
 
 const robotoSlab = Roboto_Slab({
   subsets: ["latin", "vietnamese"]
 });
 
-// line height = font size * 1.5
+export const StyledTypography = css<TypographyProps>`
+  ${typography}
+  font-family: ${robotoSlab.style.fontFamily};
+  color: ${colors.text};
+`;
 
+// line height = font size * 1.5
 // 34px
 const H1 = styled.h1`
+  ${StyledTypography}
   font-size: 2.125em;
-  font-family: ${robotoSlab.style.fontFamily};
   line-height: 51px;
-  color: ${color.text};
 `;
 
 // 28px
 const H2 = styled.h2`
+  ${StyledTypography}
   font-size: 1.75em;
-  font-family: ${robotoSlab.style.fontFamily};
   line-height: 42px;
-  color: ${color.text};
 `;
 
 // 24px
 const H3 = styled.h3`
+  ${StyledTypography}
   font-size: 1.5em;
-  font-family: ${robotoSlab.style.fontFamily};
   line-height: 36px;
-  color: ${color.text};
 `;
 
 // 18px
 const Body = styled.p`
+  ${StyledTypography}
   font-size: 1.125em;
-  font-family: ${robotoSlab.style.fontFamily};
   line-height: 27px;
-  color: ${color.text};
+`;
+
+// 16px
+const Caption = styled.p`
+  ${StyledTypography}
+  font-size: 1em;
+  line-height: 24px;
 `;
 
 export const Typography = {
-  H1, H2, H3, Body
+  H1, H2, H3, Body, Caption
 };

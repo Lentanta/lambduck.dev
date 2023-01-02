@@ -12,10 +12,10 @@ export const foreground = {
   fg4: "#a89984",
 };
 
-export const color = {
+export const colors = {
   text: "#ebdbb2",
-  lightBlue: "83a598",
-  lightRed: "fb4934"
+  lightBlue: "#83a598",
+  lightRed: "#fb4934"
 };
 
 export const desktopFontSize = {

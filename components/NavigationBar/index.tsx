@@ -1,22 +1,70 @@
-import { NavLinkItem } from "./NavLinkItem";
 import { NavLinkLogo } from "./NavLinkLogo";
+import { Link } from "@components/Styled/Link";
+
+import styled from "styled-components";
+import {
+  flexbox,
+  FlexboxProps,
+  display,
+  DisplayProps
+} from "styled-system";
 
 import 'remixicon/fonts/remixicon.css'
-import styles from "./styles.module.scss";
+import { Button } from "@components/Styled/Button";
+import { Icon } from "@components/Icon";
+import { Typography } from "@components/Styled/Typography";
+
+const Box = styled.div<FlexboxProps & DisplayProps>`
+  ${flexbox}
+  ${display}
+  gap: 10px;
+`;
+
+const NavigationBarContainer = styled.nav<FlexboxProps & DisplayProps>`
+  ${flexbox}
+  ${display}
+`;
+
+const ContentWrapper = styled.div`
+  width: 100%;
+  padding: 25px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const LinkWithBorder = styled(Link)`
+  border: 2px solid #EBDBB2;
+  border-radius: 4px;
+
+  padding: 15px 20px;
+  font-size: 20px;
+
+  &:hover {
+    color: #99B898;
+    cursor: pointer;
+    border: 2px solid #99B898;
+  }
+`;
+
 
 export const NavigationBar = (props: any) => {
   return (
-    <nav className={styles.navigationBar}>
-      <div className={styles.navigationContentWrapper}>
-        <div className={styles.navigationBarContent}>
-          <NavLinkItem content="Lentanta" href="/" withBorder />
-          <NavLinkItem content="Useful websites" href="/useful-websites" />
-        </div>
+    <NavigationBarContainer display="flex" alignItems="center">
+      <ContentWrapper>
+        <Box display="flex" alignItems="center">
+          <LinkWithBorder href="/">Lentanta</LinkWithBorder>
+          <Link href="/useful-websites">Useful websites</Link>
+        </Box>
 
-        <div className={styles.navigationBarContent}>
+        <Box display="flex" alignItems="center">
           <NavLinkLogo size={42} href="https://github.com/Lentanta" />
-        </div>
-      </div>
-    </nav>
+          <Button>
+            <Icon iconName="ri-menu-line" size={24}/>
+          </Button>
+        </Box>
+      </ContentWrapper>
+    </NavigationBarContainer>
   );
 };

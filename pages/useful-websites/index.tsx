@@ -9,11 +9,11 @@ import { SectionWrapper } from "@layouts/SectionWrapper";
 import { HeaderWrapper } from "@components/HeaderWrapper";
 
 import { Typography } from "@components/Styled/Typography";
-import { color } from "@styles/style-constant";
+import { colors } from "@styles/style-constant";
 
 const StyledBody = styled(Typography.Body)`
   &:hover {
-    color: #${color.lightBlue};
+    color: #${colors.lightBlue};
   }
 `;
 

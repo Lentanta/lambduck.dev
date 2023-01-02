@@ -11,7 +11,10 @@ export const PageWrapper = (props: any) => {
     <MainContainer>
       <Head>
         <title>Lentanta</title>
-        <meta name="description" content="Letanta website" />
+        <meta charSet="UTF-8" />
+        <meta name="description" content="Lentanta website" />
+        <meta name="author" content="Lentanta" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
 
       <NavigationBar />
