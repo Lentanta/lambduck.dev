@@ -1,31 +1,20 @@
-import Link from "next/link";
+import { NavLinkItem } from "./NavLinkItem";
+import { NavLinkLogo } from "./NavLinkLogo";
 
+import 'remixicon/fonts/remixicon.css'
 import styles from "./styles.module.scss";
 
 export const NavigationBar = (props: any) => {
   return (
-    <nav>
-      <div className={styles.navigationBar}>
-        <div className={styles.navigationContent}>
-          <div className={styles.leftSection}>
-            <div className={styles.pageLogo}>
-              <Link href="/">
-                <a>Lentanta</a>
-              </Link>
-            </div>
+    <nav className={styles.navigationBar}>
+      <div className={styles.navigationContentWrapper}>
+        <div className={styles.navigationBarContent}>
+          <NavLinkItem content="Lentanta" href="/" withBorder />
+          <NavLinkItem content="Useful websites" href="/useful-websites" />
+        </div>
 
-            <a href="/useful-websites">
-              <div className={styles.linkItem}>[Useful websites]</div>
-            </a>
-          </div>
-
-          <div className={styles.rightSection}>
-            <div className={styles.pageLogo}>
-              <Link href="/">
-                <a>Github</a>
-              </Link>
-            </div>
-          </div>
+        <div className={styles.navigationBarContent}>
+          <NavLinkLogo size={42} href="https://github.com/Lentanta" />
         </div>
       </div>
     </nav>
