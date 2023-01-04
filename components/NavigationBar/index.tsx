@@ -13,6 +13,7 @@ import 'remixicon/fonts/remixicon.css'
 import { Button } from "@components/Styled/Button";
 import { Icon } from "@components/Icon";
 import { Typography } from "@components/Styled/Typography";
+import { useState } from "react";
 
 const Box = styled.div<FlexboxProps & DisplayProps>`
   ${flexbox}
@@ -26,7 +27,6 @@ const NavigationBarContainer = styled.nav<FlexboxProps & DisplayProps>`
 `;
 
 const ContentWrapper = styled.div`
-  width: 100%;
   padding: 25px 20px;
 
   display: flex;
@@ -50,21 +50,29 @@ const LinkWithBorder = styled(Link)`
 
 
 export const NavigationBar = (props: any) => {
+  const [isExtended, setIsExtended] = useState<boolean>(false);
+
   return (
-    <NavigationBarContainer display="flex" alignItems="center">
+    <NavigationBarContainer>
       <ContentWrapper>
         <Box display="flex" alignItems="center">
           <LinkWithBorder href="/">Lentanta</LinkWithBorder>
-          <Link href="/useful-websites">Useful websites</Link>
+          {/* <Link href="/useful-websites">Useful websites</Link> */}
         </Box>
 
         <Box display="flex" alignItems="center">
-          <NavLinkLogo size={42} href="https://github.com/Lentanta" />
-          <Button>
-            <Icon iconName="ri-menu-line" size={24}/>
+          {/* <NavLinkLogo size={42} href="https://github.com/Lentanta" /> */}
+          <Button onClick={() => setIsExtended(!isExtended)}>
+            <Icon iconName="ri-menu-line" size={24} />
           </Button>
         </Box>
       </ContentWrapper>
+
+      {isExtended && (
+        <div>
+          <Link href="/useful-websites">Useful websites</Link>
+        </div>
+      )}
     </NavigationBarContainer>
   );
 };
