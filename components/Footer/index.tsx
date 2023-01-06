@@ -10,9 +10,14 @@ const FooterContainer = styled.footer`
 export const Footer = () => {
   return (
     <FooterContainer>
-      <Typography.Body>
-        Made by me (Lentanta)
-      </Typography.Body>
+      <div>
+        <Typography.Body textAlign={"center"}>
+          Made by me (Lentanta)
+        </Typography.Body>
+        <Typography.Caption textAlign={"center"}>
+          Version: 2.1.1
+        </Typography.Caption>
+      </div>
     </FooterContainer>
   )
 }

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Typography } from "@components/Styled/Typography";
-import { color, foreground } from "@styles/style-constant"
+import { foreground } from "@styles/style-constant"
 
 const Container = styled.div`
   display: flex;

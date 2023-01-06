@@ -9,11 +9,11 @@ import { SectionWrapper } from "@layouts/SectionWrapper";
 import { HeaderWrapper } from "@components/HeaderWrapper";
 
 import { Typography } from "@components/Styled/Typography";
-import { color } from "@styles/style-constant";
+import { colors } from "@styles/style-constant";
 
 const StyledBody = styled(Typography.Body)`
   &:hover {
-    color: #${color.lightBlue};
+    color: #${colors.lightBlue};
   }
 `;
 
@@ -37,13 +37,6 @@ const BlogPage = (props: any) => {
                 <StyledBody>{item.title}</StyledBody>
                 {/* <div>{item.tags[0]}</div> */}
               </Link>
-
-              // <WebsiteItem
-              //   key={item.id}
-              //   title={item.title}
-              //   tags={item.tags}
-              //   url={item.url}
-              // />
             )
         )}
       </SectionWrapper>

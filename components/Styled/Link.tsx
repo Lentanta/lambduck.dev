@@ -1,15 +1,16 @@
 import NextLink from 'next/link'
 
 import styled from "styled-components";
-import { color } from "@styles/style-constant";
-import { Typography } from "@components/Styled/Typography"
+import { colors } from "@styles/style-constant";
+import { StyledTypography } from "@components/Styled/Typography"
 
-const StyledBody = styled(Typography.Body)`
+export const Link = styled(NextLink)`
+  ${StyledTypography}
+
+  font-size: 1.125em;
+  line-height: 27px;
+
   &:hover {
-    color: #${color.lightBlue};
-  }
-`;
-
-const Link = styled(NextLink)`
-  
+    color: ${colors.lightBlue};
+  };
 `;

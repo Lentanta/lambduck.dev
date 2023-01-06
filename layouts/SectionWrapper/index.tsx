@@ -4,22 +4,25 @@ import { Typography } from "@components/Styled/Typography";
 export const SectionWrapper = (props: any) => {
   const { children, title = "TITLE" } = props;
 
-  const StyledSection = styled.section`
+  const Section = styled.section`
     margin-top: 52px;
     margin-left: 10px;
     margin-right: 10px;
   `;
 
-  const StyledContent = styled.div`
+  const SectionContent = styled.div`
     padding: 10px;
   `;
 
   return (
-    <StyledSection>
-      <Typography.H2>{title}</Typography.H2>
-      <StyledContent>
+    <Section>
+      <Typography.H2>
+        {title}
+      </Typography.H2>
+
+      <SectionContent>
         {children}
-      </StyledContent>
-    </StyledSection>
+      </SectionContent>
+    </Section>
   )
 }

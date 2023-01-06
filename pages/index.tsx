@@ -14,7 +14,7 @@ const Home: NextPage = () => {
           Hi, I'm Tam
         </Typography.H1>
         <Typography.Body>
-          I'm a full-stack web developer who create some silly useless stuffs for fun. I really curious to learn new things, love drawing, and have a passion for game development
+          I'm a full-stack web developer who create some silly useless stuffs for fun. I really curious to learn new things, love drawing, and have a passion for game development.
         </Typography.Body>
       </HeaderWrapper>
 
