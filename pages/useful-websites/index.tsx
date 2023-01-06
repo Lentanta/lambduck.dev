@@ -37,13 +37,6 @@ const BlogPage = (props: any) => {
                 <StyledBody>{item.title}</StyledBody>
                 {/* <div>{item.tags[0]}</div> */}
               </Link>
-
-              // <WebsiteItem
-              //   key={item.id}
-              //   title={item.title}
-              //   tags={item.tags}
-              //   url={item.url}
-              // />
             )
         )}
       </SectionWrapper>

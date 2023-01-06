@@ -1,5 +1,8 @@
-import { NavLinkLogo } from "./NavLinkLogo";
 import { Link } from "@components/Styled/Link";
+import {
+  StyledIcon,
+  HeaderContentContainer
+} from "./styled"
 
 import styled from "styled-components";
 import {
@@ -14,6 +17,7 @@ import { Button } from "@components/Styled/Button";
 import { Icon } from "@components/Icon";
 import { Typography } from "@components/Styled/Typography";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const Box = styled.div<FlexboxProps & DisplayProps>`
   ${flexbox}
@@ -21,7 +25,7 @@ const Box = styled.div<FlexboxProps & DisplayProps>`
   gap: 10px;
 `;
 
-const NavigationBarContainer = styled.nav<FlexboxProps & DisplayProps>`
+const Header = styled.header<FlexboxProps & DisplayProps>`
   ${flexbox}
   ${display}
 `;
@@ -48,31 +52,102 @@ const LinkWithBorder = styled(Link)`
   }
 `;
 
+const ExtendedNavItems = styled(motion.nav) <any>`
+  /* display: ${props => props.isExtended ? "block" : "none"}; */
+  background-color: #32302f;
+  border-radius: 4px;
+
+  line-height:0;
+  height: 0;
+  overflow: hidden;
+`;
+
+const variants = {
+  closed: {
+    height: 0,
+    transitionEnd: {
+      display: "none",
+    },
+  },
+  open: {
+    display: "block",
+    height: "auto",
+    marginRight: "25px",
+    marginLeft: "25px",
+    marginBottom: "25px",
+  }
+};
+
+const StyledList = styled.ul`
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+
+const StyledListItem = styled.li`
+  display: flex;
+  align-items: center;
+`;
+
+const StyledLink = styled(Link)`
+  display: flex;
+  align-items: center;
+`;
+
 
 export const NavigationBar = (props: any) => {
   const [isExtended, setIsExtended] = useState<boolean>(false);
 
+  const handleClickButton = () => {
+    setIsExtended((prevState) => !prevState);
+  };
+
   return (
-    <NavigationBarContainer>
-      <ContentWrapper>
-        <Box display="flex" alignItems="center">
-          <LinkWithBorder href="/">Lentanta</LinkWithBorder>
-          {/* <Link href="/useful-websites">Useful websites</Link> */}
-        </Box>
+    <Header>
+      <HeaderContentContainer>
+        <ContentWrapper>
+          <Box display="flex" alignItems="center">
+            <LinkWithBorder href="/">Lentanta</LinkWithBorder>
+            {/* <Link href="/useful-websites">Useful websites</Link> */}
+          </Box>
 
-        <Box display="flex" alignItems="center">
-          {/* <NavLinkLogo size={42} href="https://github.com/Lentanta" /> */}
-          <Button onClick={() => setIsExtended(!isExtended)}>
-            <Icon iconName="ri-menu-line" size={24} />
-          </Button>
-        </Box>
-      </ContentWrapper>
+          <Box display="flex" alignItems="center">
+            {/* <NavLinkLogo size={42} href="https://github.com/Lentanta" /> */}
+            {/* <Button onClick={() => setIsExtended(!isExtended)}> */}
+            <Button onClick={handleClickButton}>
+              <Icon iconName="ri-menu-line" size={24} />
+            </Button>
+          </Box>
+        </ContentWrapper>
 
-      {isExtended && (
-        <div>
-          <Link href="/useful-websites">Useful websites</Link>
-        </div>
-      )}
-    </NavigationBarContainer>
+
+        <ExtendedNavItems isExtended={isExtended}
+          animate={isExtended ? "open" : "closed"}
+          variants={variants}>
+          <StyledList>
+            <StyledListItem>
+              <StyledLink href="/" onClick={() => setIsExtended(false)}>
+                <Typography.Body>Home</Typography.Body>
+              </StyledLink>
+            </StyledListItem>
+
+            <StyledListItem>
+              <StyledLink href="/useful-websites" onClick={() => setIsExtended(false)}>
+                <Typography.Body>Useful websites</Typography.Body>
+              </StyledLink>
+            </StyledListItem>
+
+            <StyledListItem>
+              <StyledLink href="https://github.com/Lentanta" target="_blank">
+                <Typography.Body style={{ marginRight: "5px" }}>My github</Typography.Body>
+                (<Icon size={27} iconName="ri-github-fill" />)
+              </StyledLink>
+            </StyledListItem>
+          </StyledList>
+
+        </ExtendedNavItems>
+      </HeaderContentContainer>
+    </Header>
   );
 };

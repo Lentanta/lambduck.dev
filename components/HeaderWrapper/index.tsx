@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Typography } from "@components/Styled/Typography";
 
-const HeaderContainer = styled.header<{ imageUrl: string }>`
+const HeaderContainer = styled.div<{ imageUrl: string }>`
     position: relative;
 
     padding: 50px;

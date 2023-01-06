@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@next/font": "^13.0.7",
+    "framer-motion": "^8.1.9",
     "html2canvas": "^1.4.1",
     "next": "^13.0.7",
     "radash": "^7.1.0",
