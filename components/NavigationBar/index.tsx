@@ -128,25 +128,25 @@ export const NavigationBar = (props: any) => {
           <StyledList>
             <StyledListItem>
               <StyledLink href="/" onClick={() => setIsExtended(false)}>
-                <Typography.Body>Home</Typography.Body>
+                Home
               </StyledLink>
             </StyledListItem>
 
             <StyledListItem>
               <StyledLink href="/useful-websites" onClick={() => setIsExtended(false)}>
-                <Typography.Body>Useful websites</Typography.Body>
+                Useful websites
               </StyledLink>
             </StyledListItem>
 
             <StyledListItem>
               <StyledLink href="https://github.com/Lentanta" target="_blank">
-                <Typography.Body style={{ marginRight: "5px" }}>My github</Typography.Body>
+                My github
                 (<Icon size={27} iconName="ri-github-fill" />)
               </StyledLink>
             </StyledListItem>
           </StyledList>
-
         </ExtendedNavItems>
+
       </HeaderContentContainer>
     </Header>
   );

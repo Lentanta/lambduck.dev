@@ -15,7 +15,7 @@ export const Footer = () => {
           Made by me (Lentanta)
         </Typography.Body>
         <Typography.Caption textAlign={"center"}>
-          Version: 2.1.0
+          Version: 2.1.1
         </Typography.Caption>
       </div>
     </FooterContainer>
