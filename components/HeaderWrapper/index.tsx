@@ -14,7 +14,7 @@ const HeaderContainer = styled.div<{ imageUrl: string }>`
     background-repeat: no-repeat;
     background-size: cover;
 
-    @media (width < 768px) {
+    @media only screen and (max-width: 768px) {
       padding: 15px;
       min-height: 520px;
     }
@@ -34,7 +34,7 @@ const HeaderContentContainer = styled.div<{ color: string }>`
 
     padding: 35px 40px;
 
-    @media (width < 1024px) {
+    @media only screen and (max-width: 1024px) {
       margin-top: 10%;
       margin-left: auto;
       margin-right: auto;
