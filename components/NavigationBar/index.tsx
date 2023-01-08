@@ -52,8 +52,7 @@ const LinkWithBorder = styled(Link)`
   }
 `;
 
-const ExtendedNavItems = styled(motion.nav) <any>`
-  /* display: ${props => props.isExtended ? "block" : "none"}; */
+const ExtendedNav = styled(motion.nav) <any>`
   background-color: #32302f;
   border-radius: 4px;
 
@@ -122,7 +121,7 @@ export const NavigationBar = (props: any) => {
         </ContentWrapper>
 
 
-        <ExtendedNavItems isExtended={isExtended}
+        <ExtendedNav
           animate={isExtended ? "open" : "closed"}
           variants={variants}>
           <StyledList>
@@ -145,7 +144,7 @@ export const NavigationBar = (props: any) => {
               </StyledLink>
             </StyledListItem>
           </StyledList>
-        </ExtendedNavItems>
+        </ExtendedNav>
 
       </HeaderContentContainer>
     </Header>

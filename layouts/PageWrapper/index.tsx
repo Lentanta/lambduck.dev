@@ -12,7 +12,9 @@ export const MainContainer = styled.main`
   height: 100%;
   background-color: #32302F;
 
-  @media  (width < 1024px) {
+  padding-bottom: 30px;
+
+  @media only screen and (max-width: 1024px) {
     width: 100%;
   }
 `;
