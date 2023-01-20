@@ -69,8 +69,8 @@ const variants = {
     },
   },
   open: {
-    display: "block",
     height: "auto",
+    display: "block",
     marginRight: "25px",
     marginLeft: "25px",
     marginBottom: "25px",
