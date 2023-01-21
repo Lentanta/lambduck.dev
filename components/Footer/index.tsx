@@ -1,5 +1,6 @@
 import { Typography } from "@components/Styled/Typography";
 import styled from "styled-components";
+import { version } from "../../package.json";
 
 const FooterContainer = styled.footer`
   display: flex;
@@ -15,7 +16,7 @@ export const Footer = () => {
           Made by me (Lentanta)
         </Typography.Body>
         <Typography.Caption textAlign={"center"}>
-          Version: 2.1.2
+          Version: {version}
         </Typography.Caption>
       </div>
     </FooterContainer>
