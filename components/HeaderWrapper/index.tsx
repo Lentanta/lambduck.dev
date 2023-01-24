@@ -25,13 +25,9 @@ const HeaderContentContainer = styled.div<{ color: string }>`
 
     background-color: ${props => props.color};
     background-color: rgba(40,40,40, 0.7);
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(100px);
 
-    font-family: 'Roboto Slab';
-    font-style: normal;
     border-radius: 12px;
-    color: #EBDBB2;
-
     padding: 35px 40px;
 
     @media only screen and (max-width: 1024px) {
