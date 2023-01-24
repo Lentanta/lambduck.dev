@@ -3,6 +3,12 @@
    License: none (public domain)
 */
 
+/* Disable horizontal scrolling */
+html, body {
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -66,4 +72,8 @@ a {
 @font-face {
   font-family: "Cozette";
   src: url("/fonts/Cozette.otf");
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
 }

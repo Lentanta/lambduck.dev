@@ -12,7 +12,7 @@ import {
   retrieveNotionDB
 } from "@utils/queryNotionDatabase";
 import { SectionWrapper } from "@layouts/SectionWrapper";
-import { HeaderWrapper } from "@components/HeaderWrapper";
+import { CanvasHeaderWrapper } from "@components/CanvasHeaderWrapper";
 
 import { Typography } from "@components/Styled/Typography";
 import { colors } from "@styles/style-constant";
@@ -54,14 +54,14 @@ const BlogPage = (props: any) => {
 
   return (
     <PageWrapper>
-      <HeaderWrapper imageUrl="/images/dalat-v1.jpg">
+      <CanvasHeaderWrapper>
         <Typography.H1>
           My useful websites
         </Typography.H1>
         <Typography.Body>
           This is my collection of sites that I think is it interesting and may help me in the future.
         </Typography.Body>
-      </HeaderWrapper>
+      </CanvasHeaderWrapper>
 
       <SectionWrapper title="List of websites">
 
