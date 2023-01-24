@@ -1,27 +1,33 @@
 import styled from 'styled-components';
-import { colors } from '@styles/style-constant';
-
 import 'remixicon/fonts/remixicon.css'
 
 
 type IconContainerProps = {
   size: string | number;
+  color: string;
 };
 
 const StyledIcon = styled.i<IconContainerProps>`
   font-size: ${props => props.size}px;
   width: ${props => props.size}px;
   height: ${props => props.size}px;
-  color: ${colors.text};
+  color: ${props => props.color};
 `;
 
 type IconProps = {
   size: number;
+  color: string;
   iconName: string;
 };
 
 export const Icon = (props: IconProps) => {
-  const { size, iconName } = props;
+  const { size, iconName, color } = props;
 
-  return <StyledIcon className={iconName + " ri-fw"} size={size}></StyledIcon>
+  return (
+    <StyledIcon
+      className={iconName + " ri-fw"}
+      size={size}
+      color={color}
+    />
+  )
 };

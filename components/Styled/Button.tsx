@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { colors } from "@styles/style-constant";
 
 export const Button = styled.button`
   display: flex;
@@ -8,7 +7,7 @@ export const Button = styled.button`
   
   padding: 5px;
   
-  border: 1px solid ${colors.text};
+  border: 1px solid ${({ theme }) => theme.text};
   border-radius: 4px;
 
   cursor: pointer;

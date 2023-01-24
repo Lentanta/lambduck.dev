@@ -1,16 +1,17 @@
 import Head from "next/head";
+import React from "react";
+import styled from "styled-components";
 
 import { NavigationBar } from "@components/NavigationBar"
 import { Footer } from "@components/Footer";
 
-import styled from "styled-components";
-import React from "react";
+import { useThemeStore } from "@store/themeStore";
 
 export const MainContainer = styled.main`
   width: 1024px;
   margin: auto;
   height: 100%;
-  background-color: #32302F;
+  background-color: ${({ theme }) => theme.contentBg};
 
   padding-bottom: 30px;
 
@@ -21,6 +22,8 @@ export const MainContainer = styled.main`
 
 export const PageWrapper = (props: any) => {
   const { children } = props;
+  const theme = useThemeStore(
+    (state: any) => state.theme)
 
   return (
     <React.Fragment>
@@ -34,7 +37,7 @@ export const PageWrapper = (props: any) => {
 
       <NavigationBar />
 
-      <MainContainer>
+      <MainContainer theme={theme}>
         {children}
       </MainContainer>
 

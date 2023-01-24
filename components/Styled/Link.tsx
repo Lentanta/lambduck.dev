@@ -1,7 +1,6 @@
 import NextLink from 'next/link'
 
 import styled from "styled-components";
-import { colors } from "@styles/style-constant";
 import { StyledTypography } from "@components/Styled/Typography"
 
 export const Link = styled(NextLink)`
@@ -11,6 +10,6 @@ export const Link = styled(NextLink)`
   line-height: 27px;
 
   &:hover {
-    color: ${colors.lightBlue};
+    color: ${({ theme }) => theme.success};
   };
 `;

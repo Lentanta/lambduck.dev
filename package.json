@@ -1,6 +1,6 @@
 {
   "name": "hey",
-  "version": "2.2.0",
+  "version": "2.5.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -20,7 +20,8 @@
     "remixicon": "^2.5.0",
     "sass": "^1.54.5",
     "styled-components": "^5.3.6",
-    "styled-system": "^5.1.5"
+    "styled-system": "^5.1.5",
+    "zustand": "^4.3.2"
   },
   "devDependencies": {
     "@types/node": "18.7.13",
