@@ -1,17 +1,14 @@
 import dynamic from 'next/dynamic'
-
-// import { P5JSCanvas } from "@components/P5JSCanvas";
-import { Typography } from "@components/Styled/Typography";
 import styled from "styled-components";
 
 import { useWindowSize } from "@utils/useWindowSize";
+import { useThemeStore } from "@store/themeStore";
 
-const P5JSCanvas = dynamic(
-  () => import('@components/P5JSCanvas')
-    .then((mod) => mod.P5JSCanvas),
+const P5JSCanvas = dynamic<any>(
+  () => import('./P5JSCanvas')
+    .then(module => module.P5JSCanvas),
   { ssr: false }
-)
-
+);
 
 const StyledContainer = styled.div`
   position: relative;
@@ -24,43 +21,47 @@ const StyledContent = styled.div`
   top: 0;
   left: 0;
   
-  padding: 50px;
   margin: auto;
-  min-height: 524px;
+  height: 512px;
   max-width: 1024px;
 
   @media only screen and (max-width: 768px) {
-    min-height: 520px;
+    height: 512px;
   }
-`
+`;
 
-const HeaderContentContainer = styled.div<{ color: string }>`
+const ContentContainer = styled.div`
   max-width: 632px;
   backdrop-filter: blur(12px);
+  background-color: ${({ theme }) => theme.contentBg + "4D"};
 
   border-radius: 12px;
   padding: 35px 40px;
 
+  margin-top: 50px;
+  margin-left: 50px;
+
   @media only screen and (max-width: 1024px) {
-    margin-left: auto;
-    margin-right: auto;
+    margin: 10%;
   }
  `;
 
 export const CanvasHeaderWrapper = (props: any) => {
   const { children } = props;
+  const theme = useThemeStore(
+    (state: any) => state.theme)
+
   const { width } = useWindowSize()
 
   return (
     <StyledContainer>
-      <P5JSCanvas width={width} />
+      <P5JSCanvas width={width} theme={theme} />
 
       <StyledContent>
-        <HeaderContentContainer color="#282828">
+        <ContentContainer theme={theme}>
           {children}
-        </HeaderContentContainer>
+        </ContentContainer>
       </StyledContent>
-
     </StyledContainer>
   )
 }

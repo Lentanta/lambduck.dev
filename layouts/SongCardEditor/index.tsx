@@ -31,7 +31,6 @@ export const SongCardEditor = (props: any) => {
 
   return (
     <div style={{ width: "100%" }}>
-
       <div style={{ border: "1px solid white", borderRadius: "4px", padding: "15px" }}>
         <div>Version 0.1.0</div>
 

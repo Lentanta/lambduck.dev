@@ -27,7 +27,6 @@ export const ColorDot = ({ hexColor, borderColor }: any) => {
         <Dot hexColor={hexColor} />
       </BorderContainer>
 
-
       <Typography.Body>
         {hexColor}
       </Typography.Body>

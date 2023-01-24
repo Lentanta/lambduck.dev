@@ -1,10 +1,7 @@
-import { Link } from "@components/Styled/Link";
-import {
-  StyledIcon,
-  HeaderContentContainer
-} from "./styled"
-
+import { useState } from "react";
+import { useThemeStore } from "@store/themeStore";
 import styled from "styled-components";
+
 import {
   flexbox,
   FlexboxProps,
@@ -12,53 +9,22 @@ import {
   DisplayProps
 } from "styled-system";
 
-import 'remixicon/fonts/remixicon.css'
+import { Link } from "@components/Styled/Link";
 import { Button } from "@components/Styled/Button";
 import { Icon } from "@components/Icon";
-import { Typography } from "@components/Styled/Typography";
-import { useState } from "react";
-import { motion } from "framer-motion";
+
+import {
+  LinkWithBorder,
+  ContentWrapper,
+  ExtendedNav,
+  HeaderContentContainer
+} from "./styled"
+
+import 'remixicon/fonts/remixicon.css';
 
 const Box = styled.div<FlexboxProps & DisplayProps>`
   ${flexbox}
   ${display}
-  gap: 10px;
-`;
-
-const Header = styled.header<FlexboxProps & DisplayProps>`
-  ${flexbox}
-  ${display}
-`;
-
-const ContentWrapper = styled.div`
-  padding: 25px 20px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`;
-
-const LinkWithBorder = styled(Link)`
-  border: 2px solid #EBDBB2;
-  border-radius: 4px;
-
-  padding: 15px 20px;
-  font-size: 20px;
-
-  &:hover {
-    color: #99B898;
-    cursor: pointer;
-    border: 2px solid #99B898;
-  }
-`;
-
-const ExtendedNav = styled(motion.nav) <any>`
-  background-color: #32302f;
-  border-radius: 4px;
-
-  line-height:0;
-  height: 0;
-  overflow: hidden;
 `;
 
 const variants = {
@@ -96,6 +62,9 @@ const StyledLink = styled(Link)`
 
 
 export const NavigationBar = (props: any) => {
+  const theme = useThemeStore(
+    (state: any) => state.theme)
+
   const [isExtended, setIsExtended] = useState<boolean>(false);
 
   const handleClickButton = () => {
@@ -103,50 +72,50 @@ export const NavigationBar = (props: any) => {
   };
 
   return (
-    <Header>
+    <header>
       <HeaderContentContainer>
         <ContentWrapper>
           <Box display="flex" alignItems="center">
-            <LinkWithBorder href="/">Lentanta</LinkWithBorder>
-            {/* <Link href="/useful-websites">Useful websites</Link> */}
+            <LinkWithBorder href="/" theme={theme}>
+              Lentanta
+            </LinkWithBorder>
           </Box>
 
           <Box display="flex" alignItems="center">
-            {/* <NavLinkLogo size={42} href="https://github.com/Lentanta" /> */}
-            {/* <Button onClick={() => setIsExtended(!isExtended)}> */}
-            <Button onClick={handleClickButton}>
-              <Icon iconName="ri-menu-line" size={24} />
+            <Button theme={theme} onClick={handleClickButton}>
+              <Icon iconName="ri-menu-line" size={24} color={theme.text} />
             </Button>
           </Box>
         </ContentWrapper>
 
 
         <ExtendedNav
+          theme={theme}
           animate={isExtended ? "open" : "closed"}
           variants={variants}>
           <StyledList>
             <StyledListItem>
-              <StyledLink href="/" onClick={() => setIsExtended(false)}>
+              <StyledLink href="/" onClick={() => setIsExtended(false)} theme={theme}>
                 Home
               </StyledLink>
             </StyledListItem>
 
             <StyledListItem>
-              <StyledLink href="/useful-websites" onClick={() => setIsExtended(false)}>
+              <StyledLink href="/useful-websites" onClick={() => setIsExtended(false)} theme={theme}>
                 Useful websites
               </StyledLink>
             </StyledListItem>
 
             <StyledListItem>
-              <StyledLink href="https://github.com/Lentanta" target="_blank">
+              <StyledLink href="https://github.com/Lentanta" target="_blank" theme={theme}>
                 My github
-                (<Icon size={27} iconName="ri-github-fill" />)
+                (<Icon size={27} iconName="ri-github-fill" color={theme.text} />)
               </StyledLink>
             </StyledListItem>
           </StyledList>
         </ExtendedNav>
 
       </HeaderContentContainer>
-    </Header>
+    </header>
   );
 };

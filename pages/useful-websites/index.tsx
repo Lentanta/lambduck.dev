@@ -15,21 +15,24 @@ import { SectionWrapper } from "@layouts/SectionWrapper";
 import { CanvasHeaderWrapper } from "@components/CanvasHeaderWrapper";
 
 import { Typography } from "@components/Styled/Typography";
-import { colors } from "@styles/style-constant";
 import { Button } from "@components/Styled/Button";
+
+import { useThemeStore } from "@store/themeStore"
 
 const StyledBody = styled(Typography.Body)`
   text-align: center;
   &:hover {
-    color: ${colors.lightBlue};
+    color: ${({ theme }) => theme.success};
   }
 `;
 
-const BlogPage = (props: any) => {
+const UsefulWebsites = (props: any) => {
   const { listWebsite, listPostTags } = props;
   const myRef = useRef<HTMLDivElement>(null)
-
   const [selectedTag, setSelectedTag] = useState("All");
+
+  const theme = useThemeStore(
+    (state: any) => state.theme)
 
   const filteredWebsites = useMemo(() => {
     if (selectedTag === "All") return listWebsite;
@@ -55,10 +58,10 @@ const BlogPage = (props: any) => {
   return (
     <PageWrapper>
       <CanvasHeaderWrapper>
-        <Typography.H1>
+        <Typography.H1 theme={theme}>
           My useful websites
         </Typography.H1>
-        <Typography.Body>
+        <Typography.Body theme={theme}>
           This is my collection of sites that I think is it interesting and may help me in the future.
         </Typography.Body>
       </CanvasHeaderWrapper>
@@ -77,8 +80,8 @@ const BlogPage = (props: any) => {
           ref={myRef}
         >
           {listPostTags.map((item: any) => (
-            <Button key={item} onClick={() => onClick(item)}>
-              <Typography.Body>
+            <Button key={item} theme={theme} onClick={() => onClick(item)}>
+              <Typography.Body theme={theme}>
                 {item}
               </Typography.Body>
             </Button>
@@ -88,22 +91,21 @@ const BlogPage = (props: any) => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}>
-          {filteredWebsites.map(
-            (item: any) =>
-              !item.isHide && (
-                <Link key={item.key} href={item.url}>
-                  <StyledBody>{item.title}</StyledBody>
-                  {/* <div>{item.tags[0]}</div> */}
-                </Link>
-              )
-          )}
+          {filteredWebsites.map((item: any, index: number) => {
+            if (item.isHide) return;
+            return (
+              <Link key={index} href={item.url}>
+                <StyledBody theme={theme}>{item.title}</StyledBody>
+              </Link>
+            )
+          })}
         </motion.div>
 
       </SectionWrapper>
     </PageWrapper>
   );
 };
-export default BlogPage;
+export default UsefulWebsites;
 
 export const getServerSideProps = async () => {
   if (!process.env.NOTION_DATABASE_ID) return {

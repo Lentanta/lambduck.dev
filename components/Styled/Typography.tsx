@@ -2,7 +2,6 @@ import styled, { css } from "styled-components";
 import { typography, TypographyProps } from "styled-system";
 
 import { Roboto_Slab } from "@next/font/google"
-import { colors } from "@styles/style-constant";
 
 const robotoSlab = Roboto_Slab({
   subsets: ["latin", "vietnamese"]
@@ -11,7 +10,7 @@ const robotoSlab = Roboto_Slab({
 export const StyledTypography = css<TypographyProps>`
   ${typography}
   font-family: ${robotoSlab.style.fontFamily};
-  color: ${colors.text};
+  color: ${({ theme }) => theme.text};
 `;
 
 // line height = font size * 1.5
