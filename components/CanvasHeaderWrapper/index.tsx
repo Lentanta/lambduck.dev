@@ -1,8 +1,8 @@
 import dynamic from 'next/dynamic'
 import styled from "styled-components";
 
-import { useWindowSize } from "@utils/useWindowSize";
 import { useThemeStore } from "@store/themeStore";
+import { useConfigStore } from "@store/configStore";
 
 const P5JSCanvas = dynamic<any>(
   () => import('./P5JSCanvas')
@@ -47,15 +47,18 @@ const ContentContainer = styled.div`
  `;
 
 export const CanvasHeaderWrapper = (props: any) => {
-  const { children } = props;
+  const { children, innerRef } = props;
   const theme = useThemeStore(
     (state: any) => state.theme)
-
-  const { width } = useWindowSize()
+  const animationType = useConfigStore(
+    (state) => state.animationType);
 
   return (
-    <StyledContainer>
-      <P5JSCanvas width={width} theme={theme} />
+    <StyledContainer ref={innerRef}>
+      <P5JSCanvas
+        theme={theme}
+        animationType={animationType}
+      />
 
       <StyledContent>
         <ContentContainer theme={theme}>
