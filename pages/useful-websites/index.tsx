@@ -22,7 +22,7 @@ import { useThemeStore } from "@store/themeStore"
 const StyledBody = styled(Typography.Body)`
   text-align: center;
   &:hover {
-    color: ${({ theme }) => theme.success};
+    color: ${({ theme }) => theme.primary};
   }
 `;
 
@@ -66,7 +66,10 @@ const UsefulWebsites = (props: any) => {
         </Typography.Body>
       </CanvasHeaderWrapper>
 
-      <SectionWrapper title="List of websites">
+      <SectionWrapper
+        title="List of websites"
+        gridColumnSize={["100%"]}
+        gridGap={0}>
 
         <div
           style={{

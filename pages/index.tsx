@@ -1,43 +1,90 @@
 import type { NextPage } from "next";
+import { useRouter } from 'next/router'
+import React, { useRef, RefObject, useEffect } from "react";
 
 import { PageWrapper } from "@layouts/PageWrapper";
 import { SectionWrapper } from "@layouts/SectionWrapper";
+import { ThemeSelection } from "@layouts/Sections/ThemeSelection";
+
 import { Typography } from "@components/Styled/Typography";
+import { DivContainer } from "@components/Styled/DivContainer";
+import { Button } from "@components/Styled/Button";
 import { CanvasHeaderWrapper } from "@components/CanvasHeaderWrapper";
-import { ThemeSelector } from "@components/ThemeSelector";
 
 import { useThemeStore } from "@store/themeStore"
+import { useConfigStore } from "@store/configStore"
+import { AnimationConfig } from "@layouts/Sections/AnimationConfig";
 
 const Home: NextPage = () => {
+  const canvasRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    router.events.on("routeChangeStart", (url) => { console.log("Loading...", url) });
+    router.events.on("routeChangeComplete", (url) => { console.log("Done", url) });
+
+    return () => {
+      router.events.off("routeChangeStart", (url) => { console.log("Loading...", url) });
+      router.events.off("routeChangeComplete", (url) => { console.log("Done", url) });
+    };
+  }, [])
+
   const theme = useThemeStore(
-    (state: any) => state.theme)
+    (state) => state.theme)
   const changeTheme = useThemeStore(
-    (state: any) => state.changeTheme)
+    (state) => state.changeTheme)
+  const changeAnimationType = useConfigStore(
+    (state) => state.changeAnimationType);
+
+  const scrollToElm = (element: RefObject<HTMLDivElement>) => {
+    if (element && element.current) {
+      element.current.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "center"
+      })
+    };
+  };
 
   const handleClickTheme = (theme: any) => {
     changeTheme(theme);
   };
 
+  const handleChangeAnimationType = (name: string) => {
+    changeAnimationType(name);
+    scrollToElm(canvasRef);
+  };
+
   return (
     <PageWrapper>
-      <CanvasHeaderWrapper>
+      <CanvasHeaderWrapper innerRef={canvasRef}>
         <Typography.H1 theme={theme}>
           Hi, I'm Tam
         </Typography.H1>
         <Typography.Body theme={theme}>
-          I'm a full-stack web developer who create some silly useless stuffs for fun. I really curious to learn new things, love drawing, and have a passion for game development.
+          Welcome to my website 🌱
+        </Typography.Body>
+        <Typography.Body theme={theme}>
+          Currently, I'm working as a full-stack web developer 💻. 
+          I like to make silly useless stuffs for fun,
+           love drawing and learning new things.
         </Typography.Body>
       </CanvasHeaderWrapper>
-      {/* 
-      <SectionWrapper title={"My website colors"}>
-        <button onClick={() => changeTheme(themes[0])}>AAA</button>
-        <button onClick={() => changeTheme(themes[1])}>BBB</button>
-      </SectionWrapper> */}
 
-      <SectionWrapper title={"Choose your favorite theme"}>
-        <ThemeSelector onClickTheme={handleClickTheme} />
+      <SectionWrapper
+        gridColumnSize={["1fr", "1fr"]}
+        gridGap={20}>
+
+        <ThemeSelection
+          theme={theme}
+          onSelectTheme={handleClickTheme} />
+
+        <AnimationConfig
+          theme={theme}
+          onSelectAnimation={handleChangeAnimationType} />
+
       </SectionWrapper>
-    </PageWrapper>
+    </PageWrapper >
   );
 };
 

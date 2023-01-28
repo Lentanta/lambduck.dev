@@ -16,9 +16,9 @@ export const LinkWithBorder = styled(Link)`
   font-size: 20px;
 
   &:hover {
-    color: ${({ theme }) => theme.success};
+    color: ${({ theme }) => theme.primary};
     cursor: pointer;
-    border: 2px solid ${({ theme }) => theme.success};
+    border: 2px solid ${({ theme }) => theme.primary};
   }
 `;
 

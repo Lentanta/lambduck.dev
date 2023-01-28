@@ -10,6 +10,6 @@ export const Link = styled(NextLink)`
   line-height: 27px;
 
   &:hover {
-    color: ${({ theme }) => theme.success};
+    color: ${({ theme }) => theme.primary};
   };
 `;
