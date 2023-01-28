@@ -1,9 +1,9 @@
 import { create } from 'zustand';
-import { themes, Themes } from "@styles/themes";
+import { themes, Theme } from "@styles/themes";
 
 export type ThemeState = {
-  theme: Themes,
-  changeTheme: (theme: Themes) => void
+  theme: Theme,
+  changeTheme: (theme: Theme) => void
 };
 
 export const useThemeStore = create<ThemeState>()((set) => ({
