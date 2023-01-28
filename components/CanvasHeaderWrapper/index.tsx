@@ -60,11 +60,13 @@ export const CanvasHeaderWrapper = (props: any) => {
         animationType={animationType}
       />
 
-      <StyledContent>
-        <ContentContainer theme={theme}>
-          {children}
-        </ContentContainer>
-      </StyledContent>
+      {children && (
+        <StyledContent>
+          <ContentContainer theme={theme}>
+            {children}
+          </ContentContainer>
+        </StyledContent>
+      )}
     </StyledContainer>
   )
 }

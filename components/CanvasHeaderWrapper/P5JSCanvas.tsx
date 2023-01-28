@@ -36,8 +36,8 @@ export const P5JSCanvas = (props: any) => {
   let listOfRectangles: Array<Rectangle> = [];
 
   const colors = [
-    theme.success,
-    theme.error,
+    theme.primary,
+    theme.secondary,
     theme.text,
   ];
 
@@ -91,6 +91,7 @@ export const P5JSCanvas = (props: any) => {
       };
 
     });
+
 
     listOfRectangles.forEach((rectangle) => {
       p5.fill(rectangle.color);

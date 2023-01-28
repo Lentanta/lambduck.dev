@@ -1,12 +1,5 @@
+import styled from "styled-components";
 import { Typography } from "@components/Styled/Typography";
-import { themes } from "@styles/themes";
-import styled from "styled-components"
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-`;
 
 const ColorsGroupButton = styled.button`
   position: relative;
@@ -14,15 +7,24 @@ const ColorsGroupButton = styled.button`
   align-items: center;
 
   width: fit-content;
+  height: fit-content;
   border: 2px solid ${({ theme }) => theme.text};
   border-radius: 4px;
-  padding: 3px;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const ColorSquare = styled.div`
-  width: 64px;
-  height: 64px;
+  width: 52px;
+  height: 52px;
   background-color: ${(props) => props.color};
+
+  @media only screen and (max-width: 768px) {
+    height: 64px;
+    width: 100%;
+  }
 `;
 
 const ColorNameContainer = styled.div`
@@ -37,19 +39,18 @@ const ColorNameContainer = styled.div`
   background-color: ${({ theme }) => theme.contentBg + "80"};
 `;
 
-const StyledBody = styled(Typography.Body)`
-  margin-left: 5%;
+const StyledBody = styled(Typography.Caption)`
+  margin-left: 3%;
 `;
 
-const ColorGroup = ({ theme, onClickTheme }: any) => {
+export const ColorGroup = ({ theme, onClick }: any) => {
   return (
-    <ColorsGroupButton theme={theme} onClick={() => onClickTheme(theme)}>
-
+    <ColorsGroupButton theme={theme} onClick={() => onClick(theme)}>
       <ColorSquare color={theme.bodyBg} />
-      <ColorSquare color={theme.success} />
+      <ColorSquare color={theme.primary} />
       <ColorSquare color={theme.text} />
       <ColorSquare color={theme.contentBg} />
-      <ColorSquare color={theme.error} />
+      <ColorSquare color={theme.secondary} />
 
       <ColorNameContainer theme={theme}>
         <StyledBody theme={theme}>
@@ -59,15 +60,3 @@ const ColorGroup = ({ theme, onClickTheme }: any) => {
     </ColorsGroupButton>
   )
 };
-
-export const ThemeSelector = (props: any) => {
-  const { onClickTheme } = props;
-
-  return (
-    <Container>
-      {themes.map((theme, index) => (
-        <ColorGroup key={index} theme={theme} onClickTheme={onClickTheme} />
-      ))}
-    </Container>
-  )
-}

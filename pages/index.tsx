@@ -1,42 +1,50 @@
 import type { NextPage } from "next";
-import { useRef } from "react";
-import styled from "styled-components";
+import { useRouter } from 'next/router'
+import React, { useRef, RefObject, useEffect } from "react";
 
 import { PageWrapper } from "@layouts/PageWrapper";
 import { SectionWrapper } from "@layouts/SectionWrapper";
+import { ThemeSelection } from "@layouts/Sections/ThemeSelection";
+
 import { Typography } from "@components/Styled/Typography";
 import { DivContainer } from "@components/Styled/DivContainer";
 import { Button } from "@components/Styled/Button";
 import { CanvasHeaderWrapper } from "@components/CanvasHeaderWrapper";
-import { ThemeSelector } from "@components/ThemeSelector";
 
 import { useThemeStore } from "@store/themeStore"
 import { useConfigStore } from "@store/configStore"
-
-import { animationTypeNames } from "@utils/constant";
-
-const FlexBox = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 20px;
-
-  @media only screen and (max-width: 768px) {
-    flex-direction: column;
-    justify-content: start;
-    gap: 20px;
-  }
-`;
+import { AnimationConfig } from "@layouts/Sections/AnimationConfig";
 
 const Home: NextPage = () => {
-  const canvasRef = useRef<HTMLDivElement>(null)
+  const canvasRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    router.events.on("routeChangeStart", (url) => { console.log("Loading...", url) });
+    router.events.on("routeChangeComplete", (url) => { console.log("Done", url) });
+
+    return () => {
+      router.events.off("routeChangeStart", (url) => { console.log("Loading...", url) });
+      router.events.off("routeChangeComplete", (url) => { console.log("Done", url) });
+    };
+  }, [])
 
   const theme = useThemeStore(
-    (state: any) => state.theme)
+    (state) => state.theme)
   const changeTheme = useThemeStore(
-    (state: any) => state.changeTheme)
+    (state) => state.changeTheme)
   const changeAnimationType = useConfigStore(
     (state) => state.changeAnimationType);
+
+  const scrollToElm = (element: RefObject<HTMLDivElement>) => {
+    if (element && element.current) {
+      element.current.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "center"
+      })
+    };
+  };
 
   const handleClickTheme = (theme: any) => {
     changeTheme(theme);
@@ -44,14 +52,7 @@ const Home: NextPage = () => {
 
   const handleChangeAnimationType = (name: string) => {
     changeAnimationType(name);
-    console.log(canvasRef.current)
-    if(canvasRef.current){
-      canvasRef.current.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-        inline: "center"
-      })
-    }
+    scrollToElm(canvasRef);
   };
 
   return (
@@ -64,28 +65,24 @@ const Home: NextPage = () => {
           Welcome to my website 🌱
         </Typography.Body>
         <Typography.Body theme={theme}>
-          Currently, I'm working as a full-stack web developer 💻. I like to make silly useless stuffs for fun, love drawing and learning new things.
+          Currently, I'm working as a full-stack web developer 💻. 
+          I like to make silly useless stuffs for fun,
+           love drawing and learning new things.
         </Typography.Body>
       </CanvasHeaderWrapper>
 
-      <SectionWrapper>
-        <FlexBox>
-          <DivContainer display="flex" flexDirection="column" flex={1} gap={10}>
-            <Typography.H3 theme={theme}>Theme <b>[ {theme.name} ]</b></Typography.H3>
-            <ThemeSelector onClickTheme={handleClickTheme} />
-          </DivContainer>
+      <SectionWrapper
+        gridColumnSize={["1fr", "1fr"]}
+        gridGap={20}>
 
-          <DivContainer display="flex" flexDirection="column" flex={1} gap={10}>
-            <Typography.H3 theme={theme}>Animation background</Typography.H3>
-            {Object.values(animationTypeNames).map((name: string) => (
-              <Button theme={theme} onClick={() => handleChangeAnimationType(name)}>
-                <Typography.Body theme={theme}>
-                  {name}
-                </Typography.Body>
-              </Button>
-            ))}
-          </DivContainer>
-        </FlexBox>
+        <ThemeSelection
+          theme={theme}
+          onSelectTheme={handleClickTheme} />
+
+        <AnimationConfig
+          theme={theme}
+          onSelectAnimation={handleChangeAnimationType} />
+
       </SectionWrapper>
     </PageWrapper >
   );

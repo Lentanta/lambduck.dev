@@ -1,32 +1,59 @@
+import { ReactChildren, ReactElement } from "react";
+
 import styled from "styled-components";
 import { Typography } from "@components/Styled/Typography";
 import { useThemeStore } from "@store/themeStore";
 
 const Section = styled.section`
   margin-top: 50px;
+  margin-bottom: 30px;
   margin-left: 20px;
   margin-right: 20px;
 
   @media only screen and (max-width: 768px) {
+    margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
   }
 `;
 
-const SectionContent = styled.div`
+type SectionContentContainerProps = {
+  gridColumnSize: string[];
+  gridGap: number;
+};
+
+const SectionContentContainer = styled.div<SectionContentContainerProps>`
+  display: grid;
+  grid-template-columns: ${({ gridColumnSize }) => gridColumnSize.join(' ')};
+  
+  gap: ${({ gridGap }) => gridGap}px;
   padding: 10px 20px;
 
   @media only screen and (max-width: 768px) {
-    flex-direction: column;
-    justify-content: start;
-    gap: 20px;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+
+    padding: 5px 15px;
   }
 `;
 
-export const SectionWrapper = (props: any) => {
-  const { children, title } = props;
+type SectionWrapperProps = {
+  children: ReactElement | ReactElement[];
+  title?: string;
+  gridColumnSize: string[];
+  gridGap: number;
+}
+
+export const SectionWrapper = (props: SectionWrapperProps) => {
+  const {
+    children,
+    title,
+    gridColumnSize,
+    gridGap,
+  } = props;
+
   const theme = useThemeStore(
-    (state: any) => state.theme)
+    (state) => state.theme)
 
   return (
     <Section>
@@ -36,9 +63,9 @@ export const SectionWrapper = (props: any) => {
         </Typography.H2>
       )}
 
-      <SectionContent>
+      <SectionContentContainer gridColumnSize={gridColumnSize} gridGap={gridGap}>
         {children}
-      </SectionContent>
+      </SectionContentContainer>
     </Section>
   )
 }
