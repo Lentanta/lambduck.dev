@@ -5,8 +5,8 @@ import p5Types from "p5";
 
 import { animationTypeNames } from "@utils/constant";
 import { Rectangle } from './utils/Rectangle';
-import { Timer } from './utils/Timer';
 import { randomValueIn } from "./utils/functions";
+import { hexOpacity } from "@utils/hexOpacity"
 
 const Sketch = dynamic(
   () => import('react-p5')
@@ -32,7 +32,6 @@ export const P5JSCanvas = (props: any) => {
   const HEIGHT = 512;
   const SQUARE_MAX_SIZE = WIDTH / NUMBER_OF_SQUARE_HORIZONTAL;
 
-  const timer = new Timer();
   let listOfRectangles: Array<Rectangle> = [];
 
   const colors = [
@@ -49,10 +48,17 @@ export const P5JSCanvas = (props: any) => {
           y * SQUARE_MAX_SIZE,
           SQUARE_MAX_SIZE,
           SQUARE_MAX_SIZE,
-          randomValueIn(colors)
+          hexOpacity(randomValueIn(colors), 30),
+          theme.bodyBg
         ));
     };
   };
+
+  const drawDebugText = (p5: p5Types, text: any) => {
+    p5.fill("white");
+    p5.textSize(50);
+    p5.text(text, 0, 35);
+  }
 
   const setup = (p5: p5Types, canvasParentRef: Element) => {
     p5.createCanvas(WIDTH, HEIGHT)
@@ -60,58 +66,60 @@ export const P5JSCanvas = (props: any) => {
   };
 
   const draw = (p5: p5Types) => {
-    p5.frameRate(animationType === animationTypeNames.RANDOM_NOISE_COLORS ? 2 : 30)
-    p5.background(theme.bodyBg)
+    const frameCount = p5.frameCount / 100;
+    p5.background(hexOpacity(theme.bodyBg, 30))
 
-    listOfRectangles.forEach((rectangle) => {
-
+    listOfRectangles.forEach((rectangle, index) => {
       // sin wave animation
       if (animationType === animationTypeNames.HORIZONTAL_SIN_WAVE) {
-        const size = abs(sin(timer.value + (rectangle.posX / 10))) * SQUARE_MAX_SIZE;
-        rectangle.setSize(size, size)
+        p5.frameRate(60)
+        const size = abs(sin(
+          frameCount
+          - (index / 10) * (windowWidth < 768 ? 3 : 1)
+        )) * SQUARE_MAX_SIZE;
+
+        rectangle.setSize(size, size);
 
         if (rectangle.width < 5 || rectangle.height < 5) {
-          rectangle.setColor(randomValueIn(colors));
+          const randomColor = randomValueIn(colors);
+          rectangle.setColor(hexOpacity(randomColor, 30));
         };
+        rectangle.drawRectangle(p5)
       };
 
-      // sin wave animation
+      // vertical sin wave animation
       if (animationType === animationTypeNames.VERTICAL_SIN_WAVE) {
-        const size = abs(sin(timer.value + (rectangle.posY / 10))) * SQUARE_MAX_SIZE;
-        rectangle.setSize(size, size)
+        p5.frameRate(30)
+        const size = abs(
+          sin(
+            frameCount
+            + (rectangle.posY / 10)
+          )) * SQUARE_MAX_SIZE;
 
-        if (rectangle.width < 5 || rectangle.height < 5) {
-          rectangle.setColor(randomValueIn(colors));
+        rectangle.setSize(size, size);
+
+        if (rectangle.width < 2 || rectangle.height < 2) {
+          const randomColor = randomValueIn(colors);
+          rectangle.setColor(hexOpacity(randomColor, 30));
         };
+
+        rectangle.drawRectangle(p5);
       };
 
       // random noise colors animation
       if (animationType === animationTypeNames.RANDOM_NOISE_COLORS) {
-        rectangle.setColor(randomValueIn(colors));
+        p5.frameRate(30)
+        rectangle.setColor(hexOpacity(rectangle.color, 30));
+        rectangle.drawRectangle(p5);
       };
 
+      // drawDebugText(p5, abs(Math.round(sin(frameCount) * 100)))
+      // drawDebugText(p5, hexOpacity(theme.text, 0))
     });
-
-
-    listOfRectangles.forEach((rectangle) => {
-      p5.fill(rectangle.color);
-      p5.stroke(theme.bodyBg)
-
-      p5.rect(
-        rectangle.posX,
-        rectangle.posY,
-        rectangle.width,
-        rectangle.height
-      );
-    })
-
-    timer.increaseTimeBy(0.01);
   };
 
   return (
     <Sketch
-      style={{ opacity: 0.5 }}
-      // windowResized={(p5: p5Types) => p5.setup()}
       setup={setup}
       draw={draw}
     />

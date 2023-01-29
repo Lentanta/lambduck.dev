@@ -52,7 +52,10 @@ const Home: NextPage = () => {
 
   const handleChangeAnimationType = (name: string) => {
     changeAnimationType(name);
-    scrollToElm(canvasRef);
+    if (window && window.innerWidth < 768) {
+      scrollToElm(canvasRef);
+    }
+
   };
 
   return (
@@ -65,23 +68,23 @@ const Home: NextPage = () => {
           Welcome to my website 🌱
         </Typography.Body>
         <Typography.Body theme={theme}>
-          Currently, I'm working as a full-stack web developer 💻. 
+          Currently, I'm working as a full-stack web developer 💻.
           I like to make silly useless stuffs for fun,
-           love drawing and learning new things.
+          love drawing and learning new things.
         </Typography.Body>
       </CanvasHeaderWrapper>
 
       <SectionWrapper
-        gridColumnSize={["1fr", "1fr"]}
+        gridColumnSize={["auto"]}
         gridGap={20}>
 
         <ThemeSelection
           theme={theme}
           onSelectTheme={handleClickTheme} />
 
-        <AnimationConfig
+        {/* <AnimationConfig
           theme={theme}
-          onSelectAnimation={handleChangeAnimationType} />
+          onSelectAnimation={handleChangeAnimationType} /> */}
 
       </SectionWrapper>
     </PageWrapper >

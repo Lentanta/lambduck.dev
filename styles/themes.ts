@@ -40,4 +40,20 @@ export const themes = [
     primary: "#90E0EF",
     secondary: "#00B4D8"
   },
+  {
+    name: "matcha tea",
+    bodyBg: "#344e41",
+    contentBg: "#3a5a40",
+    text: "#dad7cd",
+    primary: "#a3b18a",
+    secondary: "#588157"
+  },
+  {
+    name: "oranji",
+    bodyBg: "#e76f51",
+    contentBg: "#f4a261",
+    text: "#264653",
+    primary: "#2a9d8f",
+    secondary: "#e9c46a"
+  },
 ];
