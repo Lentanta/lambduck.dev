@@ -1,8 +1,24 @@
-import { ColorGroup } from "@components/ColorGroup";
+import { ColorGroup } from "./ColorGroup";
 import { FlexBox } from "@components/Styled/FlexBox";
 import { Typography } from "@components/Styled/Typography";
 
 import { themes, Theme } from "@styles/themes";
+import styled from "styled-components";
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3 , 1fr);
+  gap: 1rem;
+
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: repeat(2 , 1fr);
+  };
+
+  @media only screen and (max-width: 425px) {
+    grid-template-columns: repeat(2 , 1fr);
+  };
+`
+
 type ThemeSelectionProps = {
   theme: Theme;
   onSelectTheme: (theme: Theme) => void;
@@ -17,14 +33,14 @@ export const ThemeSelection = (props: ThemeSelectionProps) => {
         Theme [ <b>{theme.name}</b> ]
       </Typography.H2>
 
-      <FlexBox flexDirection="row" flexWrap="wrap" gap={10}>
+      <Grid>
         {themes.map((theme) => (
           <ColorGroup
             key={theme.name}
             theme={theme}
             onClick={onSelectTheme} />
         ))}
-      </FlexBox>
+      </Grid>
     </FlexBox>
 
 

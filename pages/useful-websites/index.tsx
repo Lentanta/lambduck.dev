@@ -12,7 +12,7 @@ import {
   retrieveNotionDB
 } from "@utils/queryNotionDatabase";
 import { SectionWrapper } from "@layouts/SectionWrapper";
-import { CanvasHeaderWrapper } from "@components/CanvasHeaderWrapper";
+import { AnimationHeaderWrapper } from "@components/AnimationHeaderWrapper";
 
 import { Typography } from "@components/Styled/Typography";
 import { Button } from "@components/Styled/Button";
@@ -57,14 +57,14 @@ const UsefulWebsites = (props: any) => {
 
   return (
     <PageWrapper>
-      <CanvasHeaderWrapper>
+      <AnimationHeaderWrapper>
         <Typography.H1 theme={theme}>
           My useful websites
         </Typography.H1>
         <Typography.Body theme={theme}>
           This is my collection of sites that I think is it interesting and may help me in the future.
         </Typography.Body>
-      </CanvasHeaderWrapper>
+      </AnimationHeaderWrapper>
 
       <SectionWrapper
         title="List of websites"
