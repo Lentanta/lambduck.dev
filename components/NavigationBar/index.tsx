@@ -107,6 +107,12 @@ export const NavigationBar = (props: any) => {
             </StyledListItem>
 
             <StyledListItem>
+              <StyledLink href="/grid-playground" onClick={() => setIsExtended(false)} theme={theme}>
+                Perlin noise 2D
+              </StyledLink>
+            </StyledListItem>
+
+            <StyledListItem>
               <StyledLink href="https://github.com/Lentanta" target="_blank" theme={theme}>
                 My github
                 (<Icon size={27} iconName="ri-github-fill" color={theme.text} />)

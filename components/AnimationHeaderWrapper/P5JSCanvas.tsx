@@ -188,7 +188,10 @@ export const P5JSCanvas = (props: any) => {
             rectangle.color.r,
             rectangle.color.g,
             rectangle.color.b,
-            80
+            p5.noise(
+              frameCount + rectangle.position.x / 100,
+              frameCount + rectangle.position.y / 100)
+            * 100
           );
           p5.stroke(rectangle.strokeColor.hex)
 

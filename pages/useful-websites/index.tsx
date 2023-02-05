@@ -67,9 +67,7 @@ const UsefulWebsites = (props: any) => {
       </AnimationHeaderWrapper>
 
       <SectionWrapper
-        title="List of websites"
-        gridColumnSize={["100%"]}
-        gridGap={0}>
+        title="List of websites">
 
         <div
           style={{

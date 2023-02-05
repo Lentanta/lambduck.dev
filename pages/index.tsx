@@ -72,17 +72,13 @@ const Home: NextPage = () => {
         </Typography.Body>
       </AnimationHeaderWrapper>
 
-      <SectionWrapper
-        gridColumnSize={["auto"]}
-        gridGap={20}>
+      <SectionWrapper>
         <ThemeSelection
           theme={theme}
           onSelectTheme={handleClickTheme} />
       </SectionWrapper>
 
-      <SectionWrapper
-        gridColumnSize={["auto"]}
-        gridGap={20}>
+      <SectionWrapper>
         <AnimationConfig
           theme={theme}
           onSelectAnimation={handleChangeAnimationType} />

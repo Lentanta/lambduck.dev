@@ -17,28 +17,19 @@ const Section = styled.section`
   }
 `;
 
-type SectionContentContainerProps = {
-  gridColumnSize: string[];
-  gridGap: number;
-};
-
-const SectionContentContainer = styled.div<SectionContentContainerProps>`
+const SectionContentContainer = styled.div`
   margin-top: 10px;
 `;
 
 type SectionWrapperProps = {
   children: ReactElement | ReactElement[];
   title?: string;
-  gridColumnSize: string[];
-  gridGap: number;
-}
+};
 
 export const SectionWrapper = (props: SectionWrapperProps) => {
   const {
     children,
     title,
-    gridColumnSize,
-    gridGap,
   } = props;
 
   const theme = useThemeStore(
@@ -52,7 +43,7 @@ export const SectionWrapper = (props: SectionWrapperProps) => {
         </Typography.H2>
       )}
 
-      <SectionContentContainer gridColumnSize={gridColumnSize} gridGap={gridGap}>
+      <SectionContentContainer>
         {children}
       </SectionContentContainer>
     </Section>
