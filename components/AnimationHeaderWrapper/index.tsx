@@ -1,3 +1,4 @@
+import { ReactNode, RefObject } from "react";
 import dynamic from 'next/dynamic'
 import styled from "styled-components";
 
@@ -46,10 +47,17 @@ const ContentContainer = styled.div`
   }
  `;
 
-export const CanvasHeaderWrapper = (props: any) => {
+type AnimationHeaderWrapperProps = {
+  children: ReactNode,
+  innerRef?: RefObject<HTMLDivElement>
+};
+
+export const AnimationHeaderWrapper = (props: AnimationHeaderWrapperProps) => {
   const { children, innerRef } = props;
+
+  
   const theme = useThemeStore(
-    (state: any) => state.theme)
+    (state) => state.theme)
   const animationType = useConfigStore(
     (state) => state.animationType);
 

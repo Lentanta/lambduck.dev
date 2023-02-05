@@ -7,13 +7,13 @@ import { useThemeStore } from "@store/themeStore";
 const Section = styled.section`
   margin-top: 50px;
   margin-bottom: 30px;
-  margin-left: 20px;
-  margin-right: 20px;
+  padding: 0px 20px;
 
   @media only screen and (max-width: 768px) {
     margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
+    padding: 0px 10px;
   }
 `;
 
@@ -23,18 +23,7 @@ type SectionContentContainerProps = {
 };
 
 const SectionContentContainer = styled.div<SectionContentContainerProps>`
-  display: grid;
-  grid-template-columns: ${({ gridColumnSize }) => gridColumnSize.join(' ')};
-  
-  gap: ${({ gridGap }) => gridGap}px;
-  padding: 10px 20px;
-
-  @media only screen and (max-width: 768px) {
-    grid-template-columns: 100%;
-    grid-template-rows: auto;
-
-    padding: 5px 15px;
-  }
+  margin-top: 10px;
 `;
 
 type SectionWrapperProps = {

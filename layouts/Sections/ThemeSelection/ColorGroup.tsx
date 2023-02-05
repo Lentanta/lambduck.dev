@@ -3,10 +3,10 @@ import { Typography } from "@components/Styled/Typography";
 
 const ColorsGroupButton = styled.button`
   position: relative;
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
 
-  width: fit-content;
+  width: 100%;
   height: fit-content;
   border: 2px solid ${({ theme }) => theme.text};
   border-radius: 4px;
@@ -17,12 +17,17 @@ const ColorsGroupButton = styled.button`
 `;
 
 const ColorSquare = styled.div`
-  width: 52px;
-  height: 52px;
+  width: 100%;
+  height: 64px;
   background-color: ${(props) => props.color};
 
   @media only screen and (max-width: 768px) {
-    height: 64px;
+    height: 52px;
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 425px) {
+    height: 48px;
     width: 100%;
   }
 `;

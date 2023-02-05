@@ -7,9 +7,7 @@ import { SectionWrapper } from "@layouts/SectionWrapper";
 import { ThemeSelection } from "@layouts/Sections/ThemeSelection";
 
 import { Typography } from "@components/Styled/Typography";
-import { DivContainer } from "@components/Styled/DivContainer";
-import { Button } from "@components/Styled/Button";
-import { CanvasHeaderWrapper } from "@components/CanvasHeaderWrapper";
+import { AnimationHeaderWrapper } from "@components/AnimationHeaderWrapper";
 
 import { useThemeStore } from "@store/themeStore"
 import { useConfigStore } from "@store/configStore"
@@ -50,8 +48,8 @@ const Home: NextPage = () => {
     changeTheme(theme);
   };
 
-  const handleChangeAnimationType = (name: string) => {
-    changeAnimationType(name);
+  const handleChangeAnimationType = (type: number) => {
+    changeAnimationType(type);
     if (window && window.innerWidth < 768) {
       scrollToElm(canvasRef);
     }
@@ -60,7 +58,7 @@ const Home: NextPage = () => {
 
   return (
     <PageWrapper>
-      <CanvasHeaderWrapper innerRef={canvasRef}>
+      <AnimationHeaderWrapper innerRef={canvasRef}>
         <Typography.H1 theme={theme}>
           Hi, I'm Tam
         </Typography.H1>
@@ -72,22 +70,24 @@ const Home: NextPage = () => {
           I like to make silly useless stuffs for fun,
           love drawing and learning new things.
         </Typography.Body>
-      </CanvasHeaderWrapper>
+      </AnimationHeaderWrapper>
 
       <SectionWrapper
         gridColumnSize={["auto"]}
         gridGap={20}>
-
         <ThemeSelection
           theme={theme}
           onSelectTheme={handleClickTheme} />
-
-        {/* <AnimationConfig
-          theme={theme}
-          onSelectAnimation={handleChangeAnimationType} /> */}
-
       </SectionWrapper>
-    </PageWrapper >
+
+      <SectionWrapper
+        gridColumnSize={["auto"]}
+        gridGap={20}>
+        <AnimationConfig
+          theme={theme}
+          onSelectAnimation={handleChangeAnimationType} />
+      </SectionWrapper>
+    </PageWrapper>
   );
 };
 
