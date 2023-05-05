@@ -32,7 +32,6 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     line-height: 1;
-    background-color: ${({ theme }: any) => theme.bodyBg};
   }
   ol, ul {
     list-style: none;

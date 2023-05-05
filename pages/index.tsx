@@ -1,6 +1,9 @@
 import type { NextPage } from "next";
 import { useRouter } from 'next/router'
+import { Nunito } from "@next/font/google"
+
 import React, { useRef, RefObject, useEffect } from "react";
+import clsx from 'clsx';
 
 import { PageWrapper } from "@layouts/PageWrapper";
 import { SectionWrapper } from "@layouts/SectionWrapper";
@@ -12,6 +15,12 @@ import { AnimationHeaderWrapper } from "@components/AnimationHeaderWrapper";
 import { useThemeStore } from "@store/themeStore"
 import { useConfigStore } from "@store/configStore"
 import { AnimationConfig } from "@layouts/Sections/AnimationConfig";
+
+const nunito = Nunito({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-nunito',
+});
 
 const Home: NextPage = () => {
   const canvasRef = useRef<HTMLDivElement>(null);
@@ -56,9 +65,48 @@ const Home: NextPage = () => {
 
   };
 
+
+
   return (
     <PageWrapper>
-      <AnimationHeaderWrapper innerRef={canvasRef}>
+
+      <div className="w-full h-[600px] flex justify-center items-center">
+        <div className="m-auto w-fit h-fit">
+          <h1 className={clsx(
+            nunito.className,
+            "text-5xl text-center font-bold"
+          )}>Hi, I'm Letanta</h1>
+          <p className={clsx(
+            nunito.className,
+            "text-2xl text-center"
+          )}>Welcome to my website 🌱</p>
+        </div>
+      </div>
+
+      <div className="w-full flex justify-center items-center">
+        <div className="m-auto w-[1024px] h-[600px] bg-[#FFFCFB] flex justify-evenly items-center">
+          <div className="w-[400px] h-[400px] bg-slate-200 rounded" />
+
+          <div>
+            <h2 className={clsx(
+              nunito.className,
+              "text-3xl text-left font-bold"
+            )}>
+              About me
+            </h2>
+            <p className={clsx(
+              nunito.className,
+              "text-lg text-left"
+            )}>Currently, I'm working as a full-stack developer.</p>
+            <p className={clsx(
+              nunito.className,
+              "text-lg text-left"
+            )}>I love to code silly useless stuffs for fun.</p>
+          </div>
+
+        </div>
+      </div>
+      {/* <AnimationHeaderWrapper innerRef={canvasRef}>
         <Typography.H1 theme={theme}>
           Hi, I'm Tam
         </Typography.H1>
@@ -82,7 +130,7 @@ const Home: NextPage = () => {
         <AnimationConfig
           theme={theme}
           onSelectAnimation={handleChangeAnimationType} />
-      </SectionWrapper>
+      </SectionWrapper> */}
     </PageWrapper>
   );
 };

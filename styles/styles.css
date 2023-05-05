@@ -1,0 +1,11 @@
+.bg-main-color {
+  background: linear-gradient(180deg, #EDF4F5 0%, #FFF4EE 100%);
+};
+
+.bg-blue-color {
+  background: #EDF4F5;
+};
+
+.bg-pink-color {
+  background: #FFF4EE;
+};

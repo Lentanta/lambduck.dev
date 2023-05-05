@@ -37,9 +37,9 @@ export const PageWrapper = (props: any) => {
 
       <NavigationBar />
 
-      <MainContainer theme={theme}>
+      <main className="h-full bg-gradient-to-b from-[#EDF4F5] 0% to-[#FFF4EE] 100%">
         {children}
-      </MainContainer>
+      </main>
 
       <Footer />
     </React.Fragment>

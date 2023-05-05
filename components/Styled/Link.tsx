@@ -1,4 +1,4 @@
-import NextLink from 'next/link'
+import NextLink from 'next/link';
 
 import styled from "styled-components";
 import { StyledTypography } from "@components/Styled/Typography"
