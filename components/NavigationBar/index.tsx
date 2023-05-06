@@ -15,8 +15,9 @@ export const LinkText = (
 ) => (
   <NextLink href={href} className={clsx(
     nunito.className,
-    "text-base font-semibold",
-    "hover:opacity-60 hover:underline"
+    "text-lg font-semibold text-[#7E6F73]",
+    "leading-relaxed",
+    "hover:opacity-60 hover:underline",
   )}>{text}</NextLink>
 );
 
@@ -24,7 +25,7 @@ export const NavigationBar = () => {
   return (
     <header>
       <div className={clsx(
-        "w-full h-[50px]",
+        "w-full h-[70px]",
         "bg-[#FFF4EE]",
         "drop-shadow-md")}>
 
@@ -43,7 +44,7 @@ export const NavigationBar = () => {
             <li><LinkText href="rework" text="Projects" /></li>
             <i className={clsx(
               "ri-cpu-line",
-              "text-2xl",
+              "text-2xl text-[#7E6F73]",
             )} />
             <li><LinkText href="rework" text="Github" /></li>
             <li><LinkText href="rework" text="Contact" /></li>

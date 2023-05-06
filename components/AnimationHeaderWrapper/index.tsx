@@ -1,6 +1,6 @@
 import { ReactNode, RefObject } from "react";
 import dynamic from 'next/dynamic'
-import styled from "styled-components";
+// import styled from "styled-components";
 
 import { useThemeStore } from "@store/themeStore";
 import { useConfigStore } from "@store/configStore";
@@ -11,41 +11,41 @@ const P5JSCanvas = dynamic<any>(
   { ssr: false }
 );
 
-const StyledContainer = styled.div`
-  position: relative;
-  min-height: 512px;
-  max-width: 1024px;
-`;
+// const StyledContainer = styled.div`
+//   position: relative;
+//   min-height: 512px;
+//   max-width: 1024px;
+// `;
 
-const StyledContent = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  
-  margin: auto;
-  height: 512px;
-  max-width: 1024px;
+// const StyledContent = styled.div`
+//   position: absolute;
+//   top: 0;
+//   left: 0;
 
-  @media only screen and (max-width: 768px) {
-    height: 512px;
-  }
-`;
+//   margin: auto;
+//   height: 512px;
+//   max-width: 1024px;
 
-const ContentContainer = styled.div`
-  max-width: 632px;
-  backdrop-filter: blur(12px);
-  background-color: ${({ theme }) => theme.contentBg + "4D"};
+//   @media only screen and (max-width: 768px) {
+//     height: 512px;
+//   }
+// `;
 
-  border-radius: 12px;
-  padding: 35px 40px;
+// const ContentContainer = styled.div`
+//   max-width: 632px;
+//   backdrop-filter: blur(12px);
+//   background-color: ${({ theme }) => theme.contentBg + "4D"};
 
-  margin-top: 50px;
-  margin-left: 50px;
+//   border-radius: 12px;
+//   padding: 35px 40px;
 
-  @media only screen and (max-width: 1024px) {
-    margin: 10%;
-  }
- `;
+//   margin-top: 50px;
+//   margin-left: 50px;
+
+//   @media only screen and (max-width: 1024px) {
+//     margin: 10%;
+//   }
+//  `;
 
 type AnimationHeaderWrapperProps = {
   children: ReactNode,
@@ -55,26 +55,16 @@ type AnimationHeaderWrapperProps = {
 export const AnimationHeaderWrapper = (props: AnimationHeaderWrapperProps) => {
   const { children, innerRef } = props;
 
-  
+
   const theme = useThemeStore(
     (state) => state.theme)
   const animationType = useConfigStore(
     (state) => state.animationType);
 
   return (
-    <StyledContainer ref={innerRef}>
-      <P5JSCanvas
-        theme={theme}
-        animationType={animationType}
-      />
-
-      {children && (
-        <StyledContent>
-          <ContentContainer theme={theme}>
-            {children}
-          </ContentContainer>
-        </StyledContent>
-      )}
-    </StyledContainer>
-  )
-}
+    <P5JSCanvas
+      theme={theme}
+      animationType={animationType}
+    />
+  );
+};

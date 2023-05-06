@@ -15,12 +15,32 @@ import { AnimationHeaderWrapper } from "@components/AnimationHeaderWrapper";
 import { useThemeStore } from "@store/themeStore"
 import { useConfigStore } from "@store/configStore"
 import { AnimationConfig } from "@layouts/Sections/AnimationConfig";
+import { ColorDotAnimation } from "@components/ColorDotAnimation";
 
 const nunito = Nunito({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-nunito',
 });
+
+const HomePageHeader = () => {
+  return (
+    <div className="w-full h-[720px] flex justify-center items-center">
+      <div className="m-auto w-fit h-fit">
+        <h1 className={clsx(
+          nunito.className,
+          "text-5xl text-center font-bold",
+          "text-[#7E6F73]"
+        )}>Hi, I'm Letanta</h1>
+
+        <p className={clsx(
+          nunito.className,
+          "text-2xl text-center text-[#7E6F73]"
+        )}>Welcome to my website 🌱</p>
+      </div>
+    </div>
+  )
+}
 
 const Home: NextPage = () => {
   const canvasRef = useRef<HTMLDivElement>(null);
@@ -43,94 +63,38 @@ const Home: NextPage = () => {
   const changeAnimationType = useConfigStore(
     (state) => state.changeAnimationType);
 
-  const scrollToElm = (element: RefObject<HTMLDivElement>) => {
-    if (element && element.current) {
-      element.current.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-        inline: "center"
-      })
-    };
-  };
-
-  const handleClickTheme = (theme: any) => {
-    changeTheme(theme);
-  };
-
-  const handleChangeAnimationType = (type: number) => {
-    changeAnimationType(type);
-    if (window && window.innerWidth < 768) {
-      scrollToElm(canvasRef);
-    }
-
-  };
-
-
-
   return (
     <PageWrapper>
-
-      <div className="w-full h-[600px] flex justify-center items-center">
-        <div className="m-auto w-fit h-fit">
-          <h1 className={clsx(
-            nunito.className,
-            "text-5xl text-center font-bold"
-          )}>Hi, I'm Letanta</h1>
-          <p className={clsx(
-            nunito.className,
-            "text-2xl text-center"
-          )}>Welcome to my website 🌱</p>
-        </div>
-      </div>
+      <HomePageHeader />
 
       <div className="w-full flex justify-center items-center">
         <div className="m-auto w-[1024px] h-[600px] bg-[#FFFCFB] flex justify-evenly items-center">
-          <div className="w-[400px] h-[400px] bg-slate-200 rounded" />
-
           <div>
-            <h2 className={clsx(
-              nunito.className,
-              "text-3xl text-left font-bold"
-            )}>
-              About me
+            <ColorDotAnimation />
+            <h2 className={clsx(nunito.className, "text-xl font-semibold text-center text-[#7E6F73] mt-3")}>
+              Color dot
             </h2>
-            <p className={clsx(
-              nunito.className,
-              "text-lg text-left"
-            )}>Currently, I'm working as a full-stack developer.</p>
-            <p className={clsx(
-              nunito.className,
-              "text-lg text-left"
-            )}>I love to code silly useless stuffs for fun.</p>
+            <p className={clsx(nunito.className, "text-base text-center text-[#7E6F73]")}>
+              Made with p5js
+            </p>
           </div>
 
+          <div>
+            <h2 className={clsx(nunito.className, "text-3xl text-left font-bold text-[#7E6F73]")}>
+              About me
+            </h2>
+
+            <p className={clsx(nunito.className, "text-lg text-left text-[#7E6F73]")}>
+              Currently, I'm working as a full-stack developer.
+            </p>
+            <p className={clsx(nunito.className, "text-lg text-left text-[#7E6F73]")}>
+              I love to code silly useless stuffs for fun.
+            </p>
+          </div>
         </div>
       </div>
-      {/* <AnimationHeaderWrapper innerRef={canvasRef}>
-        <Typography.H1 theme={theme}>
-          Hi, I'm Tam
-        </Typography.H1>
-        <Typography.Body theme={theme}>
-          Welcome to my website 🌱
-        </Typography.Body>
-        <Typography.Body theme={theme}>
-          Currently, I'm working as a full-stack web developer 💻.
-          I like to make silly useless stuffs for fun,
-          love drawing and learning new things.
-        </Typography.Body>
-      </AnimationHeaderWrapper>
 
-      <SectionWrapper>
-        <ThemeSelection
-          theme={theme}
-          onSelectTheme={handleClickTheme} />
-      </SectionWrapper>
-
-      <SectionWrapper>
-        <AnimationConfig
-          theme={theme}
-          onSelectAnimation={handleChangeAnimationType} />
-      </SectionWrapper> */}
+      <div className="h-[600px]" />
     </PageWrapper>
   );
 };
