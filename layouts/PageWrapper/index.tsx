@@ -1,32 +1,18 @@
 import Head from "next/head";
 import React from "react";
-import styled from "styled-components";
+// import styled from "styled-components";
+import clsx from "clsx";
 
 import { NavigationBar } from "@components/NavigationBar"
 import { Footer } from "@components/Footer";
 
 import { useThemeStore } from "@store/themeStore";
 
-export const MainContainer = styled.main`
-  width: 1024px;
-  margin: auto;
-  height: 100%;
-  background-color: ${({ theme }) => theme.contentBg};
-
-  padding-bottom: 30px;
-
-  @media only screen and (max-width: 1024px) {
-    width: 100%;
-  }
-`;
-
 export const PageWrapper = (props: any) => {
   const { children } = props;
-  const theme = useThemeStore(
-    (state: any) => state.theme)
 
   return (
-    <React.Fragment>
+    <>
       <Head>
         <title>Lentanta</title>
         <meta charSet="UTF-8" />
@@ -42,6 +28,6 @@ export const PageWrapper = (props: any) => {
       </main>
 
       <Footer />
-    </React.Fragment>
+    </>
   )
 };

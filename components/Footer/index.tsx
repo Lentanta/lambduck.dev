@@ -3,27 +3,32 @@ import styled from "styled-components";
 import packageInfo from "../../package.json";
 
 import { useThemeStore } from "@store/themeStore";
+import NextLink from 'next/link';
+import { Nunito } from "@next/font/google"
+import clsx from 'clsx';
 
-const FooterContainer = styled.footer`
-  display: flex;
-  justify-content: center;
-  padding: 35px 0;
-`;
+import 'remixicon/fonts/remixicon.css'
+
+const nunito = Nunito({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-nunito',
+});
 
 export const Footer = () => {
   const theme = useThemeStore(
     (state: any) => state.theme)
 
   return (
-    <FooterContainer>
+    <div className="py-7 bg-[#FFF4EE]">
       <div>
-        <Typography.Body textAlign={"center"} theme={theme}>
+        <p className={clsx(nunito.className, "text-center text-lg text-[#7E6F73]")}>
           Made by me (Lentanta)
-        </Typography.Body>
-        <Typography.Caption textAlign={"center"} theme={theme}>
+        </p>
+        <p className={clsx(nunito.className, "text-center text-base text-[#7E6F73]")}>
           Version: {packageInfo.version}
-        </Typography.Caption>
+        </p>
       </div>
-    </FooterContainer>
+    </div>
   )
 }

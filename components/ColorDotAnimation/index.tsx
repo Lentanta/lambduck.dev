@@ -69,5 +69,5 @@ export const ColorDotAnimation = () => {
     });
   };
 
-  return <Sketch setup={setup} draw={draw} className="rounded-md" />
+  return <Sketch setup={setup} draw={draw} className="rounded-md w-[320px] h-[320px]" />
 };

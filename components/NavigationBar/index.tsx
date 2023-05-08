@@ -26,7 +26,7 @@ export const NavigationBar = () => {
     <header>
       <div className={clsx(
         "w-full h-[70px]",
-        "bg-[#FFF4EE]",
+        "bg-[#FFFCFB]",
         "drop-shadow-md")}>
 
         <div className={clsx(
