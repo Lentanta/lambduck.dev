@@ -18,7 +18,9 @@ export const LinkText = (
     "text-lg font-semibold text-[#7E6F73]",
     "leading-relaxed",
     "hover:opacity-60 hover:underline",
-  )}>{text}</NextLink>
+  )}>
+    {text}
+  </NextLink>
 );
 
 export const NavigationBar = () => {
@@ -41,13 +43,13 @@ export const NavigationBar = () => {
             "justify-center items-center"
           )}>
             <li><LinkText href="/" text="About" /></li>
-            <li><LinkText href="rework" text="Projects" /></li>
+            <li><LinkText href="projects" text="Projects" /></li>
             <i className={clsx(
               "ri-cpu-line",
               "text-2xl text-[#7E6F73]",
             )} />
-            <li><LinkText href="rework" text="Github" /></li>
-            <li><LinkText href="rework" text="Contact" /></li>
+            <li><LinkText href="contact" text="Github" /></li>
+            <li><LinkText href="contact" text="Contact" /></li>
           </ul>
 
         </div>

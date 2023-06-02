@@ -1,13 +1,10 @@
-import dynamic from 'next/dynamic';
+'use client';
+
 import p5Types from "p5";
 
 import { Color } from './utils/Color';
-import { hexToRgb } from "@utils/hexToRgb";
 import { randomValueIn } from "./utils/functions";
-
-const Sketch = dynamic(() => import('react-p5').then((mod) => mod.default),
-  { ssr: false }
-);
+import Sketch from "react-p5";
 
 export const ColorDotAnimation = () => {
   const CANVAS_WIDTH = 320;
@@ -69,5 +66,5 @@ export const ColorDotAnimation = () => {
     });
   };
 
-  return <Sketch setup={setup} draw={draw} className="rounded-md w-[320px] h-[320px]" />
+  return <Sketch setup={setup} draw={draw} />
 };
