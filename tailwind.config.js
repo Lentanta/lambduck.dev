@@ -8,10 +8,9 @@ module.exports = {
   theme: {
     extend: {
       color: {
-        brown: "#ffffff"
       }
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 }
 
