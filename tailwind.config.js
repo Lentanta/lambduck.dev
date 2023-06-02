@@ -7,10 +7,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        nunito: [`var(--font-nunito)`]
+      },
       color: {
       }
     },
   },
-  plugins: [require("daisyui")],
 }
 

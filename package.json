@@ -1,6 +1,6 @@
 {
   "name": "hey",
-  "version": "2.8.0",
+  "version": "3.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/font": "^13.0.7",
     "clsx": "^1.2.1",
     "framer-motion": "^8.1.9",
     "html2canvas": "^1.4.1",
@@ -17,7 +16,7 @@
     "radash": "^7.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-p5": "^1.3.33",
+    "react-p5": "^1.3.35",
     "remixicon": "^2.5.0",
     "sass": "^1.54.5",
     "styled-components": "^5.3.6",
@@ -31,7 +30,6 @@
     "@types/styled-components": "^5.1.26",
     "@types/styled-system": "^5.1.16",
     "autoprefixer": "^10.4.14",
-    "daisyui": "^3.0.0",
     "eslint": "8.23.0",
     "eslint-config-next": "^13.4.4",
     "postcss": "^8.4.23",

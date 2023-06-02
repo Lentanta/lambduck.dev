@@ -1,20 +1,13 @@
 import NextLink from 'next/link';
-import { Nunito } from "@next/font/google"
 import clsx from 'clsx';
 
 import 'remixicon/fonts/remixicon.css'
-
-const nunito = Nunito({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-nunito',
-});
 
 export const LinkText = (
   { text, href }: { text: string, href: string }
 ) => (
   <NextLink href={href} className={clsx(
-    nunito.className,
+    "font-nunito",
     "text-lg font-semibold text-[#7E6F73]",
     "leading-relaxed",
     "hover:opacity-60 hover:underline",
@@ -23,7 +16,7 @@ export const LinkText = (
   </NextLink>
 );
 
-export const NavigationBar = () => {
+export const Header = () => {
   return (
     <header>
       <div className={clsx(
@@ -43,7 +36,7 @@ export const NavigationBar = () => {
             "justify-center items-center"
           )}>
             <li><LinkText href="/" text="About" /></li>
-            <li><LinkText href="projects" text="Projects" /></li>
+            <li><LinkText href="/" text="Projects" /></li>
             <i className={clsx(
               "ri-cpu-line",
               "text-2xl text-[#7E6F73]",

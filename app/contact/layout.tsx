@@ -4,7 +4,7 @@ type ContactLayoutProps = {
 
 const RootLayout = ({ children }: ContactLayoutProps) => {
   return (
-    <div className="h-screen">
+    <div className="pt-20 min-h-screen">
       {children}
     </div>
   );
