@@ -2,7 +2,7 @@ type ContactLayoutProps = {
   children: React.ReactNode
 };
 
-const ContactLayout = ({ children }: ContactLayoutProps) => {
+const ProjectsLayout = ({ children }: ContactLayoutProps) => {
   return (
     <div className="pt-10 h-screen flex">
       {children}
@@ -10,4 +10,4 @@ const ContactLayout = ({ children }: ContactLayoutProps) => {
   );
 }
 
-export default ContactLayout;
+export default ProjectsLayout;

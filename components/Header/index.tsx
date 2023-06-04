@@ -35,14 +35,22 @@ export const Header = () => {
             "flex gap-[45px]",
             "justify-center items-center"
           )}>
-            <li><LinkText href="/" text="About" /></li>
-            <li><LinkText href="/" text="Projects" /></li>
+            <li>
+              <LinkText href="/" text="About" />
+            </li>
+            <li>
+              <LinkText href="projects" text="Projects" />
+            </li>
             <i className={clsx(
               "ri-cpu-line",
               "text-2xl text-[#7E6F73]",
             )} />
-            <li><LinkText href="contact" text="Github" /></li>
-            <li><LinkText href="contact" text="Contact" /></li>
+            <li>
+              <LinkText href="contact" text="Contact" />
+            </li>
+            <li>
+              <LinkText href="settings" text="Settings" />
+            </li>
           </ul>
 
         </div>

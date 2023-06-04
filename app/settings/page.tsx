@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-const ProjectsPage = () => {
+const SettingsPage = () => {
   return (
     <div className={clsx(
       "w-[1024px] max-h-[600px]",
@@ -13,7 +13,7 @@ const ProjectsPage = () => {
         "text-2xl font-bold text-[#7E6F73]",
         "leading-snug"
         )}>
-        My personal projects
+        Setting
       </h1>
 
       <div className={clsx(
@@ -36,4 +36,4 @@ const ProjectsPage = () => {
   )
 }
 
-export default ProjectsPage;
+export default SettingsPage;
