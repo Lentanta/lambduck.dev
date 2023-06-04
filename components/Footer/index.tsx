@@ -1,29 +1,23 @@
-import { Typography } from "@components/Styled/Typography";
-import styled from "styled-components";
 import packageInfo from "../../package.json";
+import clsx from 'clsx';
 
-import { useThemeStore } from "@store/themeStore";
-
-const FooterContainer = styled.footer`
-  display: flex;
-  justify-content: center;
-  padding: 35px 0;
-`;
+import 'remixicon/fonts/remixicon.css'
 
 export const Footer = () => {
-  const theme = useThemeStore(
-    (state: any) => state.theme)
-
   return (
-    <FooterContainer>
+    <div className="py-7 bg-[#FFF4EE]">
       <div>
-        <Typography.Body textAlign={"center"} theme={theme}>
+        <p className={clsx(
+          "font-nunito",
+          "text-center text-lg text-[#7E6F73]")}>
           Made by me (Lentanta)
-        </Typography.Body>
-        <Typography.Caption textAlign={"center"} theme={theme}>
+        </p>
+        <p className={clsx(
+          "font-nunito",
+          "text-center text-base text-[#7E6F73]")}>
           Version: {packageInfo.version}
-        </Typography.Caption>
+        </p>
       </div>
-    </FooterContainer>
+    </div>
   )
 }
