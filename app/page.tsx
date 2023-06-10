@@ -4,7 +4,7 @@ import { IntroduceSection } from "./IntroduceSection";
 import { AboutMeSection } from "./AboutMeSection";
 
 export const metadata: Metadata = {
-  title: 'My Page Title',
+  title: 'Lentanta website',
 };
 
 export default function Page() {

@@ -17,10 +17,10 @@ const nunito = Nunito({
 const RootLayout = ({ children }: RootLayoutProps) => {
   return (
     <html lang="en" className={`${nunito.variable}`}>
-      <body>
+      <body className="bg-A2">
         <Header />
 
-        <main className="bg-gradient-to-b from-[#EDF4F5] 0% to-[#FFF4EE] 100% pb-20">
+        <main className="mt-[100px]">
           {children}
         </main>
 

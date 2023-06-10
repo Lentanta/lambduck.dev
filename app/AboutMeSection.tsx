@@ -3,10 +3,13 @@ import clsx from 'clsx';
 
 export const AboutMeSection = () => {
   return (
-    <div className="
-    m-auto max-w-[1024px] min-h-[600px] bg-[#FFFCFB] 
-    flex justify-evenly items-center shadow-lg rounded-md
-    px-10 py-10">
+    <div className={clsx(
+      "m-auto max-w-[1024px] min-h-[600px]",
+      "bg-[#FFFCFB]",
+      "flex justify-evenly items-center flex-wrap",
+      "shadow-lg rounded-md",
+      "px-10 py-10"
+    )}>
 
       {/* Color dots animation */}
       <div>
@@ -31,7 +34,7 @@ export const AboutMeSection = () => {
         <h2 className={clsx(
           "font-nunito",
           "text-3xl text-left font-bold text-[#7E6F73]")}>
-          Little about me
+          About me
         </h2>
 
         <p className={clsx(
