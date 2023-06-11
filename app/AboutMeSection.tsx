@@ -1,35 +1,31 @@
 import { ColorDotAnimation } from "@components/ColorDotAnimation";
+import { Paragraph } from "@components/Common/Typography";
 import clsx from 'clsx';
 
 export const AboutMeSection = () => {
   return (
     <div className={clsx(
-      "m-auto max-w-[1024px] min-h-[600px]",
-      "bg-[#FFFCFB]",
-      "flex justify-evenly items-center flex-wrap",
-      "shadow-lg rounded-md",
-      "px-10 py-10"
+      // "m-auto max-w-[1024px] min-h-[600px]",
+      // "bg-[#FFFCFB]",
+      // "flex justify-evenly items-center flex-wrap",
+      "columns-2"
+      // "shadow-lg rounded-md",
+      // "px-10 py-10"
     )}>
 
-      {/* Color dots animation */}
       <div>
-        <div className="w-[320px] h-[320px]">
-          <ColorDotAnimation />
-        </div>
+        <ColorDotAnimation />
 
         <h2 className={clsx(
           "font-nunito",
-          "text-xl font-semibold text-center text-[#7E6F73] mt-3")}>
+          "text-xl font-semibold  text-A3")}>
           Color dot
         </h2>
-        <p className={clsx(
-          "font-nunito",
-          "text-base text-center text-[#7E6F73]")}>
+        <Paragraph>
           Made with p5js
-        </p>
+        </Paragraph>
       </div>
 
-      {/* About me */}
       <div>
         <h2 className={clsx(
           "font-nunito",
@@ -37,17 +33,12 @@ export const AboutMeSection = () => {
           About me
         </h2>
 
-        <p className={clsx(
-          "font-nunito",
-          "text-lg text-left text-[#7E6F73]")}>
+        <Paragraph>
           Currently, I'm working as a full-stack developer.
-        </p>
-
-        <p className={clsx(
-          "font-nunito",
-          "text-lg text-left text-[#7E6F73]")}>
+        </Paragraph>
+        <Paragraph>
           I love to code silly useless stuffs for fun.
-        </p>
+        </Paragraph>
       </div>
     </div>
   )

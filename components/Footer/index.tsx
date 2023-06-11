@@ -1,11 +1,10 @@
 import packageInfo from "../../package.json";
 import clsx from 'clsx';
 
-import 'remixicon/fonts/remixicon.css'
 
 export const Footer = () => {
   return (
-    <footer className="max-w-[1024px] m-auto mt-10">
+    <footer className="max-w-[1024px] m-auto mt-[150px]">
       <div className="py-3">
         <p className={clsx(
           "font-nunito",

@@ -2,6 +2,8 @@ import { Header } from "@components/Header";
 import { Footer } from "@components/Footer";
 
 import { Nunito } from "next/font/google"
+
+import 'remixicon/fonts/remixicon.css'
 import "@styles/globals.css";
 
 type RootLayoutProps = {
@@ -17,14 +19,14 @@ const nunito = Nunito({
 const RootLayout = ({ children }: RootLayoutProps) => {
   return (
     <html lang="en" className={`${nunito.variable}`}>
-      <body className="bg-A2">
+      <body className="bg-A2 mb-[100px]">
         <Header />
 
-        <main className="mt-[100px]">
+        <main>
           {children}
         </main>
 
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );

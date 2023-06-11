@@ -27,8 +27,8 @@ export const Header = () => {
   }
 
   return (
-    <header className="w-full fixed top-0 left-0">
-      <nav className="bg-A1 drop-shadow-md rounded-md max-w-[1024px] m-auto mt-2">
+    <header className="w-full">
+      <nav className="bg-A1 drop-shadow-md rounded-md max-w-[1024px] m-auto mt-2 max-md:mx-3">
         <div className={clsx(
           "max-full h-[70px]",
           "m-auto"
