@@ -10,7 +10,13 @@ module.exports = {
       fontFamily: {
         nunito: [`var(--font-nunito)`]
       },
-      color: {
+      colors: {
+        "A1": "#fffcfb",
+        "A2": "#edf4f5",
+        "A3": "#393e41",
+      },
+      screens: {
+
       }
     },
   },

@@ -1,23 +1,17 @@
 import packageInfo from "../../package.json";
 import clsx from 'clsx';
 
-import 'remixicon/fonts/remixicon.css'
 
 export const Footer = () => {
   return (
-    <div className="py-7 bg-[#FFF4EE]">
-      <div>
+    <footer className="max-w-[1024px] m-auto mt-[150px]">
+      <div className="py-3">
         <p className={clsx(
           "font-nunito",
-          "text-center text-lg text-[#7E6F73]")}>
-          Made by me (Lentanta)
-        </p>
-        <p className={clsx(
-          "font-nunito",
-          "text-center text-base text-[#7E6F73]")}>
-          Version: {packageInfo.version}
+          "text-center text-lg text-A3")}>
+          Made by me (Lentanta) [version: {packageInfo.version}]
         </p>
       </div>
-    </div>
+    </footer>
   )
 }

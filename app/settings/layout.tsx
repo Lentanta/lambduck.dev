@@ -4,7 +4,7 @@ type SettingsLayoutProps = {
 
 const SettingsLayout = ({ children }: SettingsLayoutProps) => {
   return (
-    <div className="pt-10 h-screen flex">
+    <div className="h-screen flex justify-center items-center">
       {children}
     </div>
   );

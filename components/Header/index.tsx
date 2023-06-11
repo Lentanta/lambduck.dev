@@ -1,60 +1,70 @@
-import NextLink from 'next/link';
+"use client";
+
+import { useState } from 'react';
+
+import { HeaderLink } from "./HeaderLink";
+import { TodayDate } from "./TodayDate";
 import clsx from 'clsx';
 
-import 'remixicon/fonts/remixicon.css'
 
-export const LinkText = (
-  { text, href }: { text: string, href: string }
-) => (
-  <NextLink href={href} className={clsx(
-    "font-nunito",
-    "text-lg font-semibold text-[#7E6F73]",
-    "leading-relaxed",
-    "hover:opacity-60 hover:underline",
-  )}>
-    {text}
-  </NextLink>
-);
 
 export const Header = () => {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const handleCloseHeaderMenu = (): void => {
+    setIsOpen(false);
+  };
+
+  const NavigationLink = ({ text, href }: { text: string, href: string }) => {
+    return (
+      <li className="ml-3 py-1">
+        <HeaderLink
+          text={text}
+          href={href}
+          onClick={handleCloseHeaderMenu} />
+      </li>
+    )
+  }
+
   return (
-    <header>
-      <div className={clsx(
-        "w-full h-[70px]",
-        "bg-[#FFFCFB]",
-        "drop-shadow-md")}>
+    <header className="w-full">
+      <nav className="bg-A1 drop-shadow-md rounded-md max-w-[1024px] m-auto mt-2 max-md:mx-3">
+        <div className={clsx(
+          "max-full h-[70px]",
+          "m-auto"
+        )}>
+          <div className={clsx(
+            "flex justify-between items-center",
+            "h-full w-full",
+            "px-4 py-1"
+          )}>
+            <TodayDate />
+            <button
+              className={clsx(
+                "border-solid border-A3",
+                "flex justify-between items-center",
+                "rounded-md",
+                "px-2 py-1"
+              )}
+              onClick={() => setIsOpen(!isOpen)}>
+              <i className="ri-menu-line text-lg font-normal text-A3" />
+            </button>
+          </div>
+        </div>
 
         <div className={clsx(
-          "h-full m-auto",
-          "lg:w-[1024px]",
-          "md:w-[768px]"
+          `${isOpen ? "block" : "hidden"}`,
+          "w-full px-2",
+          "absolute left-0 top-[55px] rounded-md",
         )}>
-
-          <ul className={clsx(
-            "h-full",
-            "flex gap-[45px]",
-            "justify-center items-center"
-          )}>
-            <li>
-              <LinkText href="/" text="About" />
-            </li>
-            <li>
-              <LinkText href="projects" text="Projects" />
-            </li>
-            <i className={clsx(
-              "ri-cpu-line",
-              "text-2xl text-[#7E6F73]",
-            )} />
-            <li>
-              <LinkText href="contact" text="Contact" />
-            </li>
-            <li>
-              <LinkText href="settings" text="Settings" />
-            </li>
+          <ul className="rounded-md bg-A1 shadow-inner p-2">
+            <NavigationLink text="Home" href="/" />
+            <NavigationLink text="Projects" href="/projects" />
+            <NavigationLink text="Contact" href="/contact" />
+            <NavigationLink text="Settings" href="/settings" />
           </ul>
-
         </div>
-      </div>
+      </nav>
     </header>
   )
-};
+}

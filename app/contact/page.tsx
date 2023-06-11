@@ -1,74 +1,45 @@
 import clsx from 'clsx';
 
+import { DesktopApp } from '@components/DesktopApp.tsx';
+import { Paragraph } from '@components/Common/Typography';
+
 const ContactPage = () => {
 
   return (
-    <div className={clsx(
-      "w-[1024px] max-h-[600px]",
-      "bg-[#FFFCFB]",
-      "shadow-lg rounded-md",
-      "m-auto px-10 py-10",
-    )}>
-      <h1 className={clsx(
-        "font-nunito",
-        "text-2xl font-bold text-[#7E6F73]",
-        "leading-snug"
-        )}>
-        Contact
-      </h1>
-
-      <div className={clsx(
-        "flex items-center ml-2 mt-1",
-      )}>
+    <DesktopApp windowName="Contact">
+      <div className={clsx("flex items-center gap-2 mt-1")}>
         <i className={clsx(
           "ri-map-pin-line",
-          "text-xl text-[#7E6F73]",
+          "text-xl text-A3",
         )} />
 
-        <p className={clsx(
-          "font-nunito",
-          "text-base font-semibold text-[#7E6F73]",
-          "ml-2"
-        )}>
+        <Paragraph>
           Saigon, Vietnam
-        </p>
+        </Paragraph>
       </div>
 
-
-      <div className={clsx(
-        "flex items-center ml-2 mt-1",
-      )}>
+      <div className={clsx("flex items-center gap-2 mt-1")}>
         <i className={clsx(
           "ri-mail-line",
-          "text-xl text-[#7E6F73]",
+          "text-xl text-A3",
         )} />
 
-        <p className={clsx(
-          "font-nunito",
-          "text-base font-semibold text-[#7E6F73]",
-          "ml-2"
-        )}>
+        <Paragraph>
           thanhtam180298@gmail.com
-        </p>
+        </Paragraph>
       </div>
 
-      <div className={clsx(
-        "flex items-center ml-2 mt-1",
-      )}>
+      <div className={clsx("flex items-center gap-2 mt-1")}>
         <i className={clsx(
           "ri-github-line",
-          "text-xl text-[#7E6F73]",
+          "text-xl text-A3",
         )} />
 
-        <p className={clsx(
-          "font-nunito",
-          "text-base font-semibold text-[#7E6F73]",
-          "ml-2"
-        )}>
+        <Paragraph>
           Lentanta
-        </p>
+        </Paragraph>
       </div>
-    </div>
+    </DesktopApp>
   )
 }
 

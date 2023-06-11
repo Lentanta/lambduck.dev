@@ -1,38 +1,24 @@
 import clsx from 'clsx';
+import { DesktopApp } from '@components/DesktopApp.tsx';
+import { Paragraph } from '@components/Common/Typography';
 
 const SettingsPage = () => {
   return (
-    <div className={clsx(
-      "w-[1024px] max-h-[600px]",
-      "bg-[#FFFCFB]",
-      "shadow-lg rounded-md",
-      "m-auto px-10 py-10",
-    )}>
-      <h1 className={clsx(
-        "font-nunito",
-        "text-2xl font-bold text-[#7E6F73]",
-        "leading-snug"
-        )}>
-        Setting
-      </h1>
-
+    <DesktopApp windowName="Settings">
       <div className={clsx(
-        "flex items-center ml-2 mt-1",
+        "flex justify-center items-center gap-1",
+        "my-5"
       )}>
         <i className={clsx(
           "ri-hammer-line",
-          "text-xl text-[#7E6F73]",
+          "text-base text-[#7E6F73]",
         )} />
 
-        <p className={clsx(
-          "font-nunito",
-          "text-base font-semibold text-[#7E6F73]",
-          "ml-2"
-        )}>
+        <Paragraph>
           work in progress...
-        </p>
+        </Paragraph>
       </div>
-    </div>
+    </DesktopApp>
   )
 }
 
