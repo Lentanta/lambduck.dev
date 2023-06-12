@@ -9,7 +9,7 @@ export const DesktopApp = (props: {windowName: string, children: React.ReactNode
     <div className={clsx(
       "m-auto",
       "max-md:mx-3",
-      "max-w-[1024px] w-full",
+      "max-w-[1024px]",
       "rounded-md shadow-lg bg-A1",
       className
     )}>
