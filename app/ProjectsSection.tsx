@@ -2,12 +2,12 @@ import clsx from 'clsx';
 import { DesktopApp } from '@components/DesktopApp.tsx';
 import { Paragraph } from '@components/Common/Typography';
 
-const SettingsPage = () => {
+export const ProjectsSection = () => {
   return (
-    <DesktopApp windowName="Settings">
+    <DesktopApp windowName="Projects" className="mt-3">
       <div className={clsx(
         "flex justify-center items-center gap-1",
-        "my-5"
+        "m-auto my-5",
       )}>
         <i className={clsx(
           "ri-hammer-line",
@@ -21,5 +21,3 @@ const SettingsPage = () => {
     </DesktopApp>
   )
 }
-
-export default SettingsPage;

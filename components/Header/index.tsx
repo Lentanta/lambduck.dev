@@ -1,19 +1,29 @@
 "use client";
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useBattery } from "./useBattery";
+import clsx from 'clsx';
 
 import { HeaderLink } from "./HeaderLink";
 import { TodayDate } from "./TodayDate";
-import clsx from 'clsx';
-
-
 
 export const Header = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const battery = useBattery();
 
   const handleCloseHeaderMenu = (): void => {
     setIsOpen(false);
   };
+
+  const getBatteryIconName = () => {
+    if (!battery.charging) {
+      if ((battery.level || 0) * 100 < 20) {
+        return "ri-battery-low-line";
+      }
+      return "ri-battery-fill";
+    }
+    return "ri-battery-charge-line";
+  }
 
   const NavigationLink = ({ text, href }: { text: string, href: string }) => {
     return (
@@ -39,7 +49,20 @@ export const Header = () => {
             "px-4 py-1"
           )}>
             <TodayDate />
-            <button
+
+            <div className="flex justify-center items-center gap-2">
+              <p className={clsx(
+                "font-nunito",
+                "text-base font-normal text-primary-brown",
+                "leading-relaxed"
+              )}>{(battery.level || 0) * 100}%</p>
+              <i className={clsx(
+                getBatteryIconName(),
+                "text-lg font-normal text-A3"
+              )} />
+            </div>
+
+            {/* <button
               className={clsx(
                 "border-solid border-A3",
                 "flex justify-between items-center",
@@ -48,7 +71,7 @@ export const Header = () => {
               )}
               onClick={() => setIsOpen(!isOpen)}>
               <i className="ri-menu-line text-lg font-normal text-A3" />
-            </button>
+            </button> */}
           </div>
         </div>
 

@@ -1,12 +1,11 @@
 import clsx from 'clsx';
 
-import { DesktopApp } from '@components/DesktopApp.tsx';
 import { Paragraph } from '@components/Common/Typography';
+import { DesktopApp } from '@components/DesktopApp.tsx';
 
-const ContactPage = () => {
-
+export const ContactSection = () => {
   return (
-    <DesktopApp windowName="Contact">
+    <DesktopApp windowName="Contact" className="mt-3">
       <div className={clsx("flex items-center gap-2 mt-1")}>
         <i className={clsx(
           "ri-map-pin-line",
@@ -42,5 +41,3 @@ const ContactPage = () => {
     </DesktopApp>
   )
 }
-
-export default ContactPage;

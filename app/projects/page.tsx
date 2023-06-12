@@ -7,7 +7,7 @@ const ProjectsPage = () => {
     <DesktopApp windowName="Projects">
       <div className={clsx(
         "flex justify-center items-center gap-1",
-        "my-5"
+        "m-auto my-5",
       )}>
         <i className={clsx(
           "ri-hammer-line",

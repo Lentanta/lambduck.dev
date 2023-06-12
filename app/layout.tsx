@@ -19,7 +19,7 @@ const nunito = Nunito({
 const RootLayout = ({ children }: RootLayoutProps) => {
   return (
     <html lang="en" className={`${nunito.variable}`}>
-      <body className="bg-A2 mb-[100px]">
+      <body className="bg-A2 mb-3">
         <Header />
 
         <main>
