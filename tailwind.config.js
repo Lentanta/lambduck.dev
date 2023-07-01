@@ -11,9 +11,8 @@ module.exports = {
         nunito: [`var(--font-nunito)`]
       },
       colors: {
-        "A1": "#fffcfb",
-        "A2": "#edf4f5",
-        "A3": "#393e41",
+        "mildly-green-white": "#f0f6f0",
+        "mildly-cyan-black": "#222323",
       },
       screens: {
 
