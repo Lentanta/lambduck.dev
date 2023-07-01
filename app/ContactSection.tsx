@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 
 import { Paragraph } from '@components/Common/Typography';
+import { LinkWrapper } from '@components/Common/LinkWrapper';
 import { DesktopApp } from '@components/DesktopApp.tsx';
 
 export const ContactSection = () => {
@@ -9,7 +10,7 @@ export const ContactSection = () => {
       <div className={clsx("flex items-center gap-2 mt-1")}>
         <i className={clsx(
           "ri-map-pin-line",
-          "text-xl text-A3",
+          "text-xl text-mildly-cyan-black",
         )} />
 
         <Paragraph>
@@ -20,7 +21,7 @@ export const ContactSection = () => {
       <div className={clsx("flex items-center gap-2 mt-1")}>
         <i className={clsx(
           "ri-mail-line",
-          "text-xl text-A3",
+          "text-xl text-mildly-cyan-black",
         )} />
 
         <Paragraph>
@@ -31,12 +32,14 @@ export const ContactSection = () => {
       <div className={clsx("flex items-center gap-2 mt-1")}>
         <i className={clsx(
           "ri-github-line",
-          "text-xl text-A3",
+          "text-xl text-mildly-cyan-black",
         )} />
 
-        <Paragraph>
-          Lentanta
-        </Paragraph>
+        <LinkWrapper href="https://github.com/Lentanta" target="_blank">
+          <Paragraph>
+            Lentanta
+          </Paragraph>
+        </LinkWrapper>
       </div>
     </DesktopApp>
   )
