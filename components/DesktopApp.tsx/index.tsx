@@ -10,7 +10,8 @@ export const DesktopApp = (props: {windowName: string, children: React.ReactNode
       "m-auto",
       "max-md:mx-3",
       "max-w-[1024px]",
-      "rounded-md shadow-lg bg-A1",
+      "bg-mildly-green-white",
+      "border-mildly-cyan-black border-solid border-2",
       className
     )}>
       <DesktopHeader windowName={windowName} />

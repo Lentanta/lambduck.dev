@@ -6,6 +6,7 @@ import { ProjectsSection } from './ProjectsSection';
 
 export const metadata: Metadata = {
   title: 'Lentanta website',
+  icons: "/images/lambda-logo.jpg",
 };
 
 export default function Page() {
