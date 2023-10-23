@@ -1,4 +1,4 @@
-import { cloneElement, HTMLAttributeAnchorTarget } from "react";
+import { HTMLAttributeAnchorTarget } from "react";
 import NextLink from 'next/link'
 
 import { clsxm } from "@utils/clsxm";
@@ -17,8 +17,8 @@ export const LinkWrapper = (props: LinkProps) => {
     <NextLink
       href={href}
       target={target}
-      className={clsxm(className)}>
-      {cloneElement(children, { className: "underline" })}
+      className={clsxm("hover:underline", className)}>
+      {children}
     </NextLink>
   )
 };

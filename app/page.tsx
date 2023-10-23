@@ -1,8 +1,7 @@
 import { Metadata } from 'next';
 import { Fragment } from 'react';
-import { ContactSection } from './ContactSection';
-import { IntroduceSection } from "./IntroduceSection";
-import { ProjectsSection } from './ProjectsSection';
+import { Contact } from './Contact';
+import { AboutMe } from "./AboutMe";
 
 export const metadata: Metadata = {
   title: 'Lentanta website',
@@ -12,9 +11,8 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <Fragment>
-      <IntroduceSection />
-      <ProjectsSection />
-      <ContactSection />
-    </Fragment >
+      <AboutMe />
+      <Contact />
+    </Fragment>
   );
 }
