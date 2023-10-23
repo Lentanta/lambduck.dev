@@ -1,21 +1,21 @@
 import clsx from 'clsx';
 
-import { DesktopHeader } from "./DesktopHeader";
+import { AppHeader } from "./AppHeader";
 
-export const DesktopApp = (props: {windowName: string, children: React.ReactNode, className?: string, id?: string}) => {
-  const { windowName, children, className, id } = props;
+export const DesktopApp = (props: { windowName: string, children: React.ReactNode, className?: string, id?: string }) => {
+  const { windowName, children, className } = props;
 
   return (
     <div className={clsx(
-      "m-auto",
-      "max-md:mx-3",
-      "max-w-[1024px]",
-      "bg-mildly-green-white",
-      "border-mildly-cyan-black border-solid border-2",
+      "mx-3",
+      "md:mt-5 md:mx-auto",
+      "max-w-[768px]",
+      "border-gruvbox-light-fg border-solid border-2",
+      "rounded-md shadow-md",
       className
     )}>
-      <DesktopHeader windowName={windowName} />
-      <div className="p-5">
+      <AppHeader windowName={windowName} />
+      <div className="">
         {children}
       </div>
     </div>

@@ -14,13 +14,13 @@ export const Paragraph = ({ children, className }: ParagraphProps) => (
 );
 
 export const Head1 = ({ children, className }: ParagraphProps) => (
-  <p className={clsxm(
+  <h1 className={clsxm(
     "font-nunito text-mildly-cyan-black",
     "text-3xl",
     className
   )}>
     {children}
-  </p>
+  </h1>
 );
 
 export const Head2 = ({ children, className }: ParagraphProps) => (
