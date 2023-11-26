@@ -26,7 +26,7 @@ const RootLayout = ({ children }: RootLayoutProps) => {
           {children}
         </main>
 
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );

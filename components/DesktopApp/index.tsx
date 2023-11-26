@@ -15,7 +15,7 @@ export const DesktopApp = (props: { windowName: string, children: React.ReactNod
       className
     )}>
       <AppHeader windowName={windowName} />
-      <div className="">
+      <div className="py-2 px-4">
         {children}
       </div>
     </div>

@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-import { DesktopApp } from '@components/DesktopApp.tsx'
+import { DesktopApp } from '@components/DesktopApp/index'
 import { Head1, Paragraph } from "@components/Common/Typography";
 
 export const AboutMe = () => {

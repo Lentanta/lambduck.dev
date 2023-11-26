@@ -1,10 +1,10 @@
 import packageInfo from "../../package.json";
 import clsx from 'clsx';
 
-
 export const Footer = () => {
+
   return (
-    <footer className="max-w-[1024px] m-auto mt-[150px]">
+    <footer className="max-w-[1024px] m-auto mt-10">
       <div className="py-3">
         <p className={clsx(
           "font-nunito",

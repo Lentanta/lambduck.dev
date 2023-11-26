@@ -14,6 +14,10 @@ export const AppHeader = ({ windowName }: { windowName: string, }) => {
         {windowName}
       </div>
 
+      <div>
+
+      </div>
+
       <i className={clsx(
         "ri-close-line",
         "text-md font-normal text-gruvbox-light-bg-hard")}
