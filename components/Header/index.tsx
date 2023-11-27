@@ -1,10 +1,9 @@
 "use client";
 
-import { useEffect, useState, PropsWithChildren } from 'react';
+import { PropsWithChildren } from 'react';
 import clsx from 'clsx';
-import { DesktopApp } from '@components/DesktopApp/index';
 import { LinkWrapper } from '@components/Common/LinkWrapper';
-import { Paragraph, Head1 } from '@components/Common/Typography';
+import { Paragraph, Heading1 } from '@components/Common/Typography';
 
 const TitleBox = ({ children }: PropsWithChildren) => {
   return (
@@ -25,9 +24,9 @@ export const Header = () => {
       <nav className={clsx("w-ful")}>
         <div className={clsx("flex justify-center align-middle")}>
           <TitleBox>
-            <Head1 className={clsx("font-nunito font-semibold text-center text-2xl")}>
+            <Heading1 className={clsx("font-nunito font-semibold text-center text-2xl")}>
               Lambduck <span className="">_</span>
-            </Head1>
+            </Heading1>
           </TitleBox>
         </div>
 

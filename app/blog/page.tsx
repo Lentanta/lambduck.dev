@@ -1,9 +1,9 @@
 import { DesktopApp } from "@components/DesktopApp";
 import { LinkWrapper } from "@components/Common/LinkWrapper";
-import { get } from "./get";
 import { Paragraph } from "@components/Common/Typography";
+import { get } from "./get";
 
-const getPosts = get("http://157.245.54.8:8055/items/posts?fields=id,title");
+const getPosts = get("http://157.245.54.8:8055/items/articles?fields=id,title");
 
 const ProjectsPage = async () => {
   const defaultValue: [] = [];

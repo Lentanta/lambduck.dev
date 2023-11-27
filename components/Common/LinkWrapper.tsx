@@ -17,7 +17,11 @@ export const LinkWrapper = (props: LinkProps) => {
     <NextLink
       href={href}
       target={target}
-      className={clsxm("hover:underline", className)}>
+      className={clsxm(
+        "hover:underline",
+        "w-fit",
+        className
+      )}>
       {children}
     </NextLink>
   )
