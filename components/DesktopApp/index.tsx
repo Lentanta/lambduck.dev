@@ -1,9 +1,16 @@
+import { PropsWithChildren, ReactNode } from "react"
 import clsx from 'clsx';
 
 import { AppHeader } from "./AppHeader";
 
-export const DesktopApp = (props: { windowName: string, children: React.ReactNode, className?: string, id?: string }) => {
-  const { windowName, children, className } = props;
+
+type DesktopAppWrapperProps = {
+  windowName: string,
+  className?: string,
+}
+
+export const DesktopApp = (props: PropsWithChildren<DesktopAppWrapperProps>) => {
+  const { children, windowName, className } = props;
 
   return (
     <div className={clsx(
@@ -15,6 +22,7 @@ export const DesktopApp = (props: { windowName: string, children: React.ReactNod
       className
     )}>
       <AppHeader windowName={windowName} />
+
       <div className="py-2 px-4">
         {children}
       </div>

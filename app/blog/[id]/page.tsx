@@ -8,7 +8,8 @@ const getPosts = async (id: number) => {
   try {
     const result = await fetch(
       `${process.env.DIRECTUS_URL}/items/articles/${id}`,
-      { cache: "no-cache" });
+      { cache: "no-cache" }
+    );
 
     if (!result.ok) return [];
     return result.json();
