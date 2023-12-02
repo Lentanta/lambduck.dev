@@ -1,6 +1,6 @@
 {
-  "name": "hey",
-  "version": "4.2.0",
+  "name": "lambduck",
+  "version": "1.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@directus/sdk": "^13.0.2",
     "clsx": "^1.2.1",
     "dayjs": "^1.11.8",
     "next": "^13.4.4",
@@ -25,8 +24,6 @@
     "@types/node": "18.7.13",
     "@types/react": "^18.0.10",
     "@types/react-dom": "^18.0.5",
-    "@types/styled-components": "^5.1.26",
-    "@types/styled-system": "^5.1.16",
     "autoprefixer": "^10.4.14",
     "eslint": "8.23.0",
     "eslint-config-next": "^13.4.4",

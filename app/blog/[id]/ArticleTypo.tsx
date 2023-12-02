@@ -8,9 +8,10 @@ const fontStyle = "font-nunito text-gruvbox-light-fg";
 export const P = ({ children, className }: ParagraphProps) => (
   <p className={clsxm(
     fontStyle,
-    "text-lg",
+    "text-base",
     "leading-snug",
-    "mb-6 mt-2",
+    "mb-1 mt-2",
+    "break-words",
     className
   )}>
     {children}
@@ -20,9 +21,9 @@ export const P = ({ children, className }: ParagraphProps) => (
 export const H1 = ({ children, className }: ParagraphProps) => (
   <h1 className={clsxm(
     fontStyle,
-    "text-5xl font-extrabold",
+    "text-3xl font-extrabold",
     "leading-tight",
-    "mb-7 mt-4",
+    "my-5",
     className
   )}>
     {children}
@@ -32,10 +33,10 @@ export const H1 = ({ children, className }: ParagraphProps) => (
 export const H2 = ({ children, className }: ParagraphProps) => (
   <h2 className={clsxm(
     fontStyle,
-    "text-2xl",
+    "text-xl",
     "leading-tight",
-    "font-semibold",
-    "pt-3 mb-3",
+    "font-bold",
+    "pt-2 mb-3",
     className
   )}>
     {children}
@@ -45,9 +46,9 @@ export const H2 = ({ children, className }: ParagraphProps) => (
 export const H3 = ({ children, className }: ParagraphProps) => (
   <h3 className={clsxm(
     fontStyle,
-    "text-xl",
+    "text-lg",
     "leading-tight",
-    "font-normal",
+    "font-bold",
     "pt-3 mb-3",
     className
   )}>

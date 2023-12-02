@@ -3,28 +3,42 @@ import NextLink from "next/link"
 import { DesktopApp } from "@components/DesktopApp";
 import { clsxm } from "@utils/clsxm";
 import { get } from "./get";
+import dayjs from "dayjs";
 
 const getPosts = get(`${process.env.DIRECTUS_URL}/items/articles?fields=id,title,status,createdDate`);
 
-const PostTitle = (props: { id: string, title: string }) => {
-  const { id, title } = props;
+type Article = {
+  id: string,
+  title: string,
+  content: string,
+  createdDate: string
+}
 
-  const nextLinkClass = clsxm(
-    "block",
-    "w-fit",
-    "hover:underline",
-    "text-gruvbox-light-fg",
-    "font-nunito",
-    "text-2xl font-semibold",
-    "leading-snug",
-  )
+const PostTitle = (props: { article: Article }) => {
+  const { id, title, createdDate } = props.article;
 
   return (
     <div className="my-2">
-      <NextLink href={`/blog/${id}`} className={nextLinkClass}>
+      <NextLink
+        href={`/blog/${id}`}
+        className={clsxm(
+          "block w-fit",
+          "hover:underline",
+          "text-gruvbox-light-fg",
+          "font-nunito",
+          "leading-normal",
+          "text-xl font-semibold"
+        )}>
         {title}
       </NextLink>
-      <p>Created date updating...</p>
+
+      <div className="flex items-center gap-1 text-md">
+        <i className="ri-time-line" />
+        <p className="text-md">
+          {dayjs(createdDate).format("MMM DD, YYYY")}
+        </p>
+      </div>
+
     </div>
 
   )
@@ -38,8 +52,8 @@ const ProjectsPage = async () => {
 
   return (
     <DesktopApp windowName="Articles">
-      {publicPosts.map((post: any) => {
-        return <PostTitle id={post.id} title={post.title} />
+      {publicPosts.map((article: Article) => {
+        return <PostTitle key={article.id} article={article} />
       })}
     </DesktopApp>
   )

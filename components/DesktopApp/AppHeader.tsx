@@ -7,6 +7,7 @@ export const AppHeader = ({ windowName }: { windowName: string, }) => {
       "bg-gruvbox-light-fg",
       "flex justify-between items-center",
     )}>
+
       <div className={clsx(
         "font-nunito",
         "text-md text-center font-bold",
@@ -14,14 +15,11 @@ export const AppHeader = ({ windowName }: { windowName: string, }) => {
         {windowName}
       </div>
 
-      <div>
-
-      </div>
-
       <i className={clsx(
+        "text-gruvbox-light-bg-hard",
         "ri-close-line",
-        "text-md font-normal text-gruvbox-light-bg-hard")}
-      />
+        "text-md font-normal"
+      )} />
     </div>
   )
 }

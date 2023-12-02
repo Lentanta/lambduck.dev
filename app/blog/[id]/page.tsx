@@ -32,9 +32,10 @@ const Page = async ({ params }: { params: { id: number } }) => {
   return (
     <DesktopApp windowName={data?.title || ""}>
       <div className="py-3">
-        <H1 className="text-center font-semibold uppercase">
+        <H1 className="text-center uppercase">
           {data?.title || ""}
         </H1>
+        <hr className="mb-7" />
 
         <Markdown components={components}>
           {data?.content}
