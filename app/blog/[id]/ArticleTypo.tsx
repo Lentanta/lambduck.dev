@@ -10,7 +10,7 @@ export const P = ({ children, className }: ParagraphProps) => (
     fontStyle,
     "text-lg",
     "leading-snug",
-    "mb-6",
+    "mb-6 mt-2",
     className
   )}>
     {children}

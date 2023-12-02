@@ -43,11 +43,11 @@ export const Header = () => {
               </Paragraph>
             </LinkWrapper>
 
-            <LinkWrapper href="/projects">
+            {/* <LinkWrapper href="/projects">
               <Paragraph className={clsx("text-lg")}>
                 Projects
               </Paragraph>
-            </LinkWrapper>
+            </LinkWrapper> */}
 
             <LinkWrapper href="/blog">
               <Paragraph className={clsx("text-lg")}>
