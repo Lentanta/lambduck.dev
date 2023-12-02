@@ -3,50 +3,52 @@ import { clsxm } from "@utils/clsxm";
 
 type ParagraphProps = PropsWithChildren<{ className?: string }>
 
-export const Paragraph = ({ children, className }: ParagraphProps) => (
+const fontStyle = "font-nunito text-gruvbox-light-fg";
+
+export const P = ({ children, className }: ParagraphProps) => (
   <p className={clsxm(
-    "text-gruvbox-light-fg",
-    "font-nunito",
+    fontStyle,
     "text-lg",
     "leading-snug",
+    "mb-6",
     className
   )}>
     {children}
   </p>
 );
 
-export const Heading1 = ({ children, className }: ParagraphProps) => (
+export const H1 = ({ children, className }: ParagraphProps) => (
   <h1 className={clsxm(
-    "text-gruvbox-light-fg",
-    "font-nunito",
-    "text-5xl",
+    fontStyle,
+    "text-5xl font-extrabold",
     "leading-tight",
+    "mb-7 mt-4",
     className
   )}>
     {children}
   </h1>
 );
 
-export const Heading2 = ({ children, className }: ParagraphProps) => (
+export const H2 = ({ children, className }: ParagraphProps) => (
   <h2 className={clsxm(
-    "text-gruvbox-light-fg",
-    "font-nunito",
+    fontStyle,
     "text-2xl",
     "leading-tight",
-    "font-medium",
+    "font-semibold",
+    "pt-3 mb-3",
     className
   )}>
     {children}
   </h2>
 );
 
-export const Heading3 = ({ children, className }: ParagraphProps) => (
+export const H3 = ({ children, className }: ParagraphProps) => (
   <h3 className={clsxm(
-    "text-gruvbox-light-fg",
-    "font-nunito",
+    fontStyle,
     "text-xl",
     "leading-tight",
     "font-normal",
+    "pt-3 mb-3",
     className
   )}>
     {children}
