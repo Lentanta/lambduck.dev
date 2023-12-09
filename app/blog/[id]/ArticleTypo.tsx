@@ -3,7 +3,7 @@ import { clsxm } from "@utils/clsxm";
 
 type ParagraphProps = PropsWithChildren<{ className?: string }>
 
-const fontStyle = "font-nunito text-gruvbox-light-fg";
+const fontStyle = "font-nunito text-color-1";
 
 export const P = ({ children, className }: ParagraphProps) => (
   <p className={clsxm(

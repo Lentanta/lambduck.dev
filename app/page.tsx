@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { Fragment } from 'react';
 import { Contact } from './Contact';
 import { AboutMe } from "./AboutMe";
+import { Animation } from "./Animation";
 
 export const metadata: Metadata = {
   title: 'Lentanta website',
@@ -13,6 +14,7 @@ export default function Page() {
     <Fragment>
       <AboutMe />
       <Contact />
+      <Animation />
     </Fragment>
   );
 }

@@ -17,7 +17,8 @@ export const DesktopApp = (props: PropsWithChildren<DesktopAppWrapperProps>) => 
       "mx-3",
       "md:mt-5 md:mx-auto",
       "max-w-[768px]",
-      "border-gruvbox-light-fg border-solid border-2",
+      "border-color-1 border-solid border-2",
+      "bg-color-4",
       "rounded-md shadow-md",
       className
     )}>

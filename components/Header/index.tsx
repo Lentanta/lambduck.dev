@@ -8,7 +8,7 @@ import { Paragraph, Heading1 } from '@components/Common/Typography';
 const TitleBox = ({ children }: PropsWithChildren) => {
   return (
     <div className={clsx(
-      "border-2 border-gruvbox-light-fg",
+      "border-2 border-color-1",
       "rounded-md  shadow-lg",
       "w-fit h-full",
       "px-5 py-2"
@@ -54,12 +54,6 @@ export const Header = () => {
                 Blog
               </Paragraph>
             </LinkWrapper>
-
-            {/* <LinkWrapper href="/games">
-              <Paragraph className={clsx("text-lg")}>
-                Games
-              </Paragraph>
-            </LinkWrapper> */}
           </div>
 
         </div>
