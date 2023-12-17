@@ -17,12 +17,13 @@ jobs:
         key: ${{ secrets.PRIVATE_KEY }}
         port: 22
         script: |
-           cd ~/apps/my-website
-           git checkout main
-           git status
-           git pull
-           npm install -g yarn
-           yarn && yarn build
-           pm2 ps
-           pm2 restart 0
-           npm uninstall -g yarn
+            cd ~/apps/my-website
+            export NVM_DIR=~/.nvm
+            source ~/.nvm/nvm.sh
+            corepack enable
+            git checkout main
+            git status
+            git pull
+            yarn && yarn build
+            pm2 ps
+            pm2 restart 0
