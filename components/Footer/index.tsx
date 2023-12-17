@@ -1,16 +1,17 @@
 import packageInfo from "../../package.json";
-import clsx from 'clsx';
-
+import { Paragraph } from "@components/Common/Typography";
 
 export const Footer = () => {
+
   return (
-    <footer className="max-w-[1024px] m-auto mt-[150px]">
+    <footer className="max-w-[1024px] m-auto mt-10">
       <div className="py-3">
-        <p className={clsx(
-          "font-nunito",
-          "text-center text-lg text-mildly-cyan-black")}>
-          Made by me (Lentanta) [version: {packageInfo.version}]
-        </p>
+        <Paragraph className="text-center">
+          Made by me
+        </Paragraph>
+        <Paragraph className="text-center text-sm">
+          [version: {packageInfo.version}]
+        </Paragraph>
       </div>
     </footer>
   )

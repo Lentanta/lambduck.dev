@@ -1,18 +1,17 @@
 "use client";
 
-import { useEffect, useState, PropsWithChildren } from 'react';
+import { PropsWithChildren } from 'react';
 import clsx from 'clsx';
-import { DesktopApp } from '@components/DesktopApp.tsx';
 import { LinkWrapper } from '@components/Common/LinkWrapper';
-import { Paragraph, Head1 } from '@components/Common/Typography';
+import { Paragraph, Heading1 } from '@components/Common/Typography';
 
 const TitleBox = ({ children }: PropsWithChildren) => {
   return (
     <div className={clsx(
-      "border-2 border-gruvbox-light-fg",
+      "border-2 border-color-1",
       "rounded-md  shadow-lg",
       "w-fit h-full",
-      "px-3 py-2"
+      "px-5 py-2"
     )}>
       {children}
     </div>
@@ -25,9 +24,9 @@ export const Header = () => {
       <nav className={clsx("w-ful")}>
         <div className={clsx("flex justify-center align-middle")}>
           <TitleBox>
-            <Head1 className={clsx("font-nunito font-semibold text-center text-2xl")}>
-              The Lambda Duck <span className="">_</span>
-            </Head1>
+            <Heading1 className={clsx("font-nunito font-semibold text-center text-2xl")}>
+              Lambduck <span className="">_</span>
+            </Heading1>
           </TitleBox>
         </div>
 
@@ -44,21 +43,15 @@ export const Header = () => {
               </Paragraph>
             </LinkWrapper>
 
-            <LinkWrapper href="/projects">
+            {/* <LinkWrapper href="/projects">
               <Paragraph className={clsx("text-lg")}>
                 Projects
               </Paragraph>
-            </LinkWrapper>
+            </LinkWrapper> */}
 
             <LinkWrapper href="/blog">
               <Paragraph className={clsx("text-lg")}>
                 Blog
-              </Paragraph>
-            </LinkWrapper>
-
-            <LinkWrapper href="/games">
-              <Paragraph className={clsx("text-lg")}>
-                Games
               </Paragraph>
             </LinkWrapper>
           </div>

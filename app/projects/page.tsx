@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { DesktopApp } from '@components/DesktopApp.tsx';
+import { DesktopApp } from '@components/DesktopApp/index';
 import { Paragraph } from '@components/Common/Typography';
 
 const ProjectsPage = () => {

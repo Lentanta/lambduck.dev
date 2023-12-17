@@ -19,14 +19,14 @@ const nunito = Nunito({
 const RootLayout = ({ children }: RootLayoutProps) => {
   return (
     <html lang="en" className={`${nunito.variable}`}>
-      <body className="bg-gruvbox-light-bg-0 my-5">
+      <body className="bg-color-4 my-5">
         <Header />
 
         <main>
           {children}
         </main>
 
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );
