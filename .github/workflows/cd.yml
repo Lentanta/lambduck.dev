@@ -1,0 +1,26 @@
+name: My website CD
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Deploy using ssh
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.PRIVATE_KEY }}
+        port: 22
+        script: |
+           cd ~/apps/my-website
+           git checkout main
+           git status
+           git pull
+           yarn && yarn build
+           pm2 ps
+           pm2 restart 0
