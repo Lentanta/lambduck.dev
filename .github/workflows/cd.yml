@@ -18,12 +18,14 @@ jobs:
         port: 22
         script: |
             cd ~/apps/my-website
+
+            # export nvm to uing npm
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh
+
+            # enable corepack to using yarn
             corepack enable
             git checkout main
-            git status
             git pull
             yarn && yarn build
-            pm2 ps
             pm2 restart 0
