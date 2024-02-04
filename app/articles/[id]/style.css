@@ -9,28 +9,27 @@ article {
 
 article h1 {
   font-weight: bold;
-  margin-top: 24px;
-  margin-bottom: 16px;
 }
 
 article h2 {
-  @apply font-semibold;
-  margin-top: 24px;
-  margin-bottom: 12px;
+  margin-top: 1.4em;
+  font-weight: 600;
 }
 
 article h3 {
-  @apply font-semibold;
-  margin-top: 24px;
-  margin-bottom: 8px;
+  font-weight: 600;
 }
 
 article hr {
-  margin-bottom: 16px;
+  margin-top: 12px;
 }
 
 article p {
-  margin-bottom: 16px;
+  margin-top: 12px;
+}
+
+article a {
+  text-decoration-line: underline;
 }
 
 @media only screen and (max-width: 768px) {

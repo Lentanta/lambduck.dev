@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { DesktopApp } from '@components/DesktopApp/index';
-import { Paragraph } from '@components/Common/Typography';
+import { p } from '@components/Common/Typography';
 
 const ProjectsPage = () => {
   return (
@@ -14,9 +14,9 @@ const ProjectsPage = () => {
           "text-base text-[#7E6F73]",
         )} />
 
-        <Paragraph>
+        <p>
           work in progress...
-        </Paragraph>
+        </p>
       </div>
     </DesktopApp>
   )
