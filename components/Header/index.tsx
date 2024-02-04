@@ -1,6 +1,4 @@
 import clsx from 'clsx';
-import { LinkWrapper } from '@components/Common/LinkWrapper';
-import { Paragraph, H2 } from '@components/Common/Typography';
 import NextLink from "next/link";
 
 const TitleBox = ({ text }: { text: string }) => {
@@ -11,9 +9,9 @@ const TitleBox = ({ text }: { text: string }) => {
       "w-fit h-full",
       "px-6 py-3"
     )}>
-      <H2 className={clsx("font-bold text-center")}>
+      <h2 className="font-bold text-center">
         {text}<span>_</span>
-      </H2>
+      </h2>
     </div>
   )
 };
@@ -41,9 +39,9 @@ export const Header = () => {
             </NextLink>
 
             {/* <LinkWrapper href="/blog">
-              <Paragraph className={clsx("text-lg")}>
+              <p className={clsx("text-lg")}>
                 Blog
-              </Paragraph>
+              </p>
             </LinkWrapper> */}
           </div>
 

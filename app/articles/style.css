@@ -10,6 +10,7 @@
 
 .articles-page p {
   margin-top: 10px;
+  margin-left: 5px;
 }
 
 @media only screen and (max-width: 768px) {

@@ -1,10 +1,10 @@
 import packageInfo from "../../package.json";
-import { Paragraph } from "@components/Common/Typography";
+import "./style.css";
 
 export const Footer = () => {
 
   return (
-    <footer className="w-full m-auto mt-10 bg-color-dark">
+    <footer className="bg-color-dark">
       <div className="py-7">
         <p className="text-center text-color-light">
           Made by me

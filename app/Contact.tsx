@@ -1,7 +1,6 @@
 import clsx from 'clsx';
+import NextLink from "next/link";
 
-import { Paragraph } from '@components/Common/Typography';
-import { LinkWrapper } from '@components/Common/LinkWrapper';
 import { DesktopApp } from '@components/DesktopApp/index';
 
 export const Contact = () => {
@@ -13,9 +12,9 @@ export const Contact = () => {
           "text-xl text-mildly-cyan-black",
         )} />
 
-        <Paragraph>
+        <p>
           Saigon, Vietnam
-        </Paragraph>
+        </p>
       </div>
 
       <div className={clsx("flex items-center gap-2 mt-1")}>
@@ -24,9 +23,9 @@ export const Contact = () => {
           "text-xl text-mildly-cyan-black",
         )} />
 
-        <Paragraph>
+        <p>
           thanhtam180298@gmail.com
-        </Paragraph>
+        </p>
       </div>
 
       <div className={clsx("flex items-center gap-2 mt-1")}>
@@ -35,11 +34,9 @@ export const Contact = () => {
           "text-xl text-mildly-cyan-black",
         )} />
 
-        <LinkWrapper href="https://github.com/Lentanta" target="_blank">
-          <Paragraph>
-            Lentanta
-          </Paragraph>
-        </LinkWrapper>
+        <NextLink href="https://github.com/Lentanta" target="_blank">
+          <p>Lentanta</p>
+        </NextLink>
       </div>
     </DesktopApp>
   )
