@@ -5,7 +5,7 @@ type ParagraphProps = PropsWithChildren<{ className?: string }>
 
 export const Paragraph = ({ children, className }: ParagraphProps) => (
   <p className={clsxm(
-    "text-color-1",
+    "text-color-dark",
     "font-nunito",
     "text-lg",
     "leading-snug",
@@ -17,7 +17,7 @@ export const Paragraph = ({ children, className }: ParagraphProps) => (
 
 export const Heading1 = ({ children, className }: ParagraphProps) => (
   <h1 className={clsxm(
-    "text-color-1",
+    "text-color-dark",
     "font-nunito",
     "text-5xl",
     "leading-tight",
@@ -27,9 +27,9 @@ export const Heading1 = ({ children, className }: ParagraphProps) => (
   </h1>
 );
 
-export const Heading2 = ({ children, className }: ParagraphProps) => (
+export const H2 = ({ children, className }: ParagraphProps) => (
   <h2 className={clsxm(
-    "text-color-1",
+    "text-color-dark",
     "font-nunito",
     "text-2xl",
     "leading-tight",
@@ -42,7 +42,7 @@ export const Heading2 = ({ children, className }: ParagraphProps) => (
 
 export const Heading3 = ({ children, className }: ParagraphProps) => (
   <h3 className={clsxm(
-    "text-color-1",
+    "text-color-dark",
     "font-nunito",
     "text-xl",
     "leading-tight",

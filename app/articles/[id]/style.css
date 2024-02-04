@@ -1,0 +1,40 @@
+:root {
+  --tablet-width: 768px;
+}
+
+article {
+  max-width: var(--tablet-width);
+  margin: 24px auto;
+}
+
+article h1 {
+  font-weight: bold;
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+article h2 {
+  @apply font-semibold;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+article h3 {
+  @apply font-semibold;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+article hr {
+  margin-bottom: 16px;
+}
+
+article p {
+  margin-bottom: 16px;
+}
+
+@media only screen and (max-width: 768px) {
+  article {
+    margin: 16px 24px;
+  }
+}

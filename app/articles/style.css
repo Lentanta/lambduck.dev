@@ -1,0 +1,19 @@
+.articles-page {
+  max-width: 768px;
+  margin: auto;
+}
+
+.articles-page h2 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+.articles-page p {
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .articles-page {
+    margin: 0 24px;
+  }
+}
