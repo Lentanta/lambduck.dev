@@ -1,7 +1,4 @@
-import clsx from 'clsx';
-
 import { DesktopApp } from '@components/DesktopApp/index'
-import { Heading1, Paragraph } from "@components/Common/Typography";
 
 export const Animation = () => {
   return (

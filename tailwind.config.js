@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -12,10 +11,8 @@ module.exports = {
         nunito: [`var(--font-nunito)`]
       },
       colors: {
-        "color-1": "#000000",
-        "color-2": "#F4DFC8",
-        "color-3": "#F4EAE0",
-        "color-4": "white"
+        "color-dark": "#000000",
+        "color-light": "#FFFFFF"
       },
       screens: {
 

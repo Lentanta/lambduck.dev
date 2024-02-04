@@ -1,3 +1,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  p {
+    @apply font-nunito;
+    @apply text-xl;
+    @apply leading-snug;
+  }
+
+  h1 {
+    @apply font-nunito;
+    @apply text-4xl;
+    @apply leading-tight;
+  }
+
+  h2 {
+    @apply font-nunito;
+    @apply text-3xl;
+    @apply leading-tight;
+  }
+
+  h3 {
+    @apply font-nunito;
+    @apply text-2xl;
+    @apply leading-tight;
+  }
+
+  a {
+    @apply font-nunito;
+    @apply text-xl;
+    @apply leading-snug;
+  }
+
+  a:hover {
+    @apply underline;
+    cursor: pointer;
+  }
+}

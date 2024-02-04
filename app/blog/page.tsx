@@ -25,7 +25,7 @@ const PostTitle = (props: { article: Article }) => {
         className={clsxm(
           "block w-fit",
           "hover:underline",
-          "text-color-1",
+          "text-color-dark",
           "font-nunito",
           "leading-normal",
           "text-xl font-semibold"
