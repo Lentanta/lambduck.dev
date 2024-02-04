@@ -1,6 +1,5 @@
 import clsx from 'clsx';
 import { DesktopApp } from '@components/DesktopApp/index';
-import { p } from '@components/Common/Typography';
 
 const ProjectsPage = () => {
   return (
