@@ -28,5 +28,5 @@ jobs:
             git checkout main
             git pull
 
-            sudo docker build -tag lambduck-image .
+            sudo docker build -t lambduck-image .
             sudo docker run --rm -d -p 3000:3000 --name lambduck-website lambduck-image
