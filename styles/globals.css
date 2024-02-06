@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --tablet-width: 768px;
+}
+
 @layer base {
 
   body {
@@ -12,10 +16,19 @@
     padding-bottom: 150px;
   }
 
+  main {
+    max-width: var(--tablet-width);
+    margin: auto;
+  }
+
   p {
     @apply font-nunito;
-    @apply text-xl;
+    @apply text-lg;
     @apply leading-snug;
+  }
+
+  i {
+    @apply text-xl;
   }
 
   h1 {
@@ -38,7 +51,7 @@
 
   a {
     @apply font-nunito;
-    @apply text-xl;
+    @apply text-lg;
     @apply leading-snug;
   }
 

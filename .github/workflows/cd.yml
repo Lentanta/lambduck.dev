@@ -27,5 +27,6 @@ jobs:
             corepack enable
             git checkout main
             git pull
-            yarn && yarn build
-            pm2 restart 0
+
+            sudo docker build -tag lambduck-image .
+            sudo docker run --rm -d -p 3000:3000 --name lambduck-website

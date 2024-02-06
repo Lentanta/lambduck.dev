@@ -1,8 +1,5 @@
 import * as fs from "fs";
 import NextLink from "next/link";
-
-// @ts-ignore
-import Markdown from "react-markdown";
 import "./style.css";
 
 const ArticlesPage = async () => {
@@ -20,7 +17,9 @@ const ArticlesPage = async () => {
       <hr />
       {fileNames.map((item) => (
         <NextLink href={"/articles/" + files[0]} className="block w-fit">
-          <p className="normal-case max-w-fit">{item}</p>
+          <p className="text-2xl max-w-fit">
+            &gt; {item}
+          </p>
         </NextLink>
       ))}
     </div>

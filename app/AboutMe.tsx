@@ -10,10 +10,11 @@ export const AboutMe = () => {
           Hi, I'm Tam
         </h1>
 
-        <p className={clsx("text-center text-lg mt-2 z-10")}>
+        <p className="text-center mt-2">
           Welcome to my website 🌱
         </p>
+
       </div>
-    </DesktopApp>
+    </DesktopApp >
   )
 }

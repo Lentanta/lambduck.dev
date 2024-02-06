@@ -16,7 +16,6 @@ export const DesktopApp = (props: PropsWithChildren<DesktopAppWrapperProps>) => 
     <div className={clsx(
       "mx-3",
       "md:mt-5 md:mx-auto",
-      "max-w-[768px]",
       "border-color-dark border-solid border-2",
       "bg-color-light",
       "rounded-md shadow-md",
