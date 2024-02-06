@@ -8,18 +8,11 @@ export const AppHeader = ({ windowName }: { windowName: string, }) => {
       "flex justify-between items-center",
     )}>
 
-      <div className={clsx(
-        "font-nunito",
-        "text-md text-center font-bold",
-        "text-color-light")}>
+      <p className="text-color-light font-bold">
         {windowName}
-      </div>
+      </p>
 
-      <i className={clsx(
-        "text-color-light",
-        "ri-close-line",
-        "text-md font-normal"
-      )} />
+      <i className="text-color-light ri-close-line" />
     </div>
   )
 }
