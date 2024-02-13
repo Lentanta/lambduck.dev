@@ -29,4 +29,5 @@ jobs:
             git pull
 
             sudo docker build -t lambduck-image .
+            sudo docker stop lambduck-website
             sudo docker run --rm -d -p 3000:3000 --name lambduck-website lambduck-image
