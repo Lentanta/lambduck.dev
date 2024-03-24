@@ -1,4 +1,4 @@
-import packageInfo from "../../package.json";
+import packageInfo from "@/package.json";
 import "./style.css";
 
 export const Footer = () => {

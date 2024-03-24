@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { Fragment } from 'react';
-import { Contact } from './Contact';
-import { AboutMe } from "./AboutMe";
+import { Contact } from '@sections/Contact';
+import { AboutMe } from "@sections/AboutMe";
 
 export const metadata: Metadata = {
   title: 'Lentanta website',

@@ -20,6 +20,12 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
+      "@/*": [
+        "./*"
+      ],
+      "@sections/*": [
+        "sections/*"
+      ],
       "@components/*": [
         "components/*"
       ],
@@ -49,8 +55,9 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
-, "components/DesktopApp"  ],
+    ".next/types/**/*.ts",
+    "components/DesktopApp"
+  ],
   "exclude": [
     "node_modules"
   ]

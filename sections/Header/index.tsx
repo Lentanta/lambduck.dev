@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import NextLink from "next/link";
+import "@styles/globals.css";
 
 const TitleBox = ({ text }: { text: string }) => {
   return (
