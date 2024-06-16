@@ -8,7 +8,7 @@ export const AppHeader = ({ windowName }: { windowName: string, }) => {
       "flex justify-between items-center",
     )}>
 
-      <p className="text-color-light font-bold">
+      <p className="text-color-light font-bold text-body">
         {windowName}
       </p>
 
