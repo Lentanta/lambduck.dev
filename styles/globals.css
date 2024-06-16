@@ -2,12 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  font-size: 18px;
+  @apply font-nunito;
+}
+
 :root {
   --tablet-width: 768px;
 }
 
 @layer base {
-
   body {
     position: relative;
     min-height: 100vh;
@@ -19,34 +23,6 @@
   main {
     max-width: var(--tablet-width);
     margin: auto;
-  }
-
-  p {
-    @apply font-nunito;
-    @apply text-lg;
-    @apply leading-snug;
-  }
-
-  i {
-    @apply text-xl;
-  }
-
-  h1 {
-    @apply font-nunito;
-    @apply text-4xl;
-    @apply leading-tight;
-  }
-
-  h2 {
-    @apply font-nunito;
-    @apply text-3xl;
-    @apply leading-tight;
-  }
-
-  h3 {
-    @apply font-nunito;
-    @apply text-2xl;
-    @apply leading-tight;
   }
 
   a {

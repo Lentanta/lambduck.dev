@@ -9,7 +9,7 @@ const TitleBox = ({ text }: { text: string }) => {
       "w-fit h-full",
       "px-6 py-3"
     )}>
-      <h2 className="font-bold text-center">
+      <h2 className="font-bold text-center text-subTitle">
         {text}<span>_</span>
       </h2>
     </div>
@@ -31,22 +31,14 @@ export const Header = () => {
             "gap-4 md:gap-8")}>
 
             <NextLink href="/">
-              <p>Home</p>
+              <p className="text-smallSubTitle">Home</p>
             </NextLink>
 
             <NextLink href="/articles">
-              <p>Articles</p>
+              <p className="text-smallSubTitle">Articles</p>
             </NextLink>
-
-            {/* <LinkWrapper href="/blog">
-              <p className={clsx("text-lg")}>
-                Blog
-              </p>
-            </LinkWrapper> */}
           </div>
-
         </div>
-
       </nav>
     </header >
   )

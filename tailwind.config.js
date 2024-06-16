@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,14 +9,26 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        nunito: [`var(--font-nunito)`]
+        nunito: [`var(--font-nunito)`],
+        notoSans: [`var(--font-notoSans)`]
       },
       colors: {
         "color-dark": "#000000",
         "color-light": "#FFFFFF"
       },
-      screens: {
-
+      fontSize: {
+        title: [
+          "2.25rem",
+        ],
+        subTitle: [
+          "1.5rem",
+        ],
+        smallSubTitle: [
+          "1.25rem",
+        ],
+        body: [
+          "1rem",
+        ]
       }
     },
   },
