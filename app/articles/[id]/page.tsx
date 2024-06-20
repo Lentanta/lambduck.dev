@@ -1,46 +1,69 @@
-import { Fragment } from "react";
-
-import { ChildPageBlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
-import { isFullBlock } from "@notionhq/client";
-import { getNotionClient } from "@/utils/services/notionClient";
-import { NotionBlock } from "../NotionBlock";
+import dynamic from 'next/dynamic'
+import { readFileSync } from "fs";
 import clsx from "clsx";
+import dayjs from 'dayjs';
 
+import { PUBLIC_POSTS_PATH } from '@/utils/constant';
+import { markdownMetadataParser } from '@/utils/markdownMetadataParser';
+import { getReadingTime } from '../functions/getReadingTime';
+
+const Markdown = dynamic(() => import("react-markdown"));
 const ArticlePage = async ({ params }: { params: { id: string } }) => {
-  const notion = getNotionClient()
+  const md = readFileSync(`${PUBLIC_POSTS_PATH}/${params.id}`, "utf8");
+  const { metadata, content } = markdownMetadataParser(md);
+  const { title } = metadata;
 
-  // The header of page
-  const pageProperties = await notion.blocks.retrieve({
-    block_id: params.id
-  });
-
-  const pageContent = await notion.blocks.children.list({
-    block_id: params.id,
-  });
-
-  if (!isFullBlock(pageProperties)) return <Fragment />
-  if (pageProperties.type !== "child_page") return <Fragment />
+  const dateTime = dayjs(metadata.createdDate, "DD/MM/YYYY");
+  const dateFormated = dateTime.isValid()
+    ? dateTime.format("MMM DD, YYYY")
+    : "Today"
+  const readingTime = getReadingTime(content);
 
   return (
-    <article className={
-      clsx(
-        "mt-10 mb-20",
-        "lg:w-[768px]",
-        "w-full",
-      )}>
-      <h1 className={clsx(
-        "mb-3",
-        "font-nunito font-bold text-title",
-      )}>
-        {pageProperties.child_page.title}
+    <article className={clsx(
+      "mt-[1.3em] mb-[1.5em]",
+      "lg:w-[768px] lg:px-0",
+      "w-full px-3",
+    )}>
+      <h1 className="text-title font-bold">
+        {title}
       </h1>
-      <hr />
+      <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1">
+          <i className="ri-calendar-line" />
+          <small>{dateFormated}</small>
+        </div>
+        <div className="flex items-center gap-1">
+          <i className="ri-time-line" />
+          <small>{readingTime} minutes to read</small>
+        </div>
+      </div>
 
-      {pageContent.results.map((block) => {
-        return isFullBlock(block)
-          ? <NotionBlock block={block} />
-          : <Fragment />
-      })}
+      <Markdown
+        className="mt-[1.2em]"
+        components={{
+          h2: (props) => (
+            <h2 className={clsx(
+              "mt-[1em]",
+              "text-subTitle",
+              "font-semibold font-nunito"
+            )}>
+              {props.children}
+            </h2>
+          ),
+          h3: (props) => (
+            <h3 className={clsx(
+              "mt-[1em]",
+              "text-smallSubTitle",
+              "font-semibold font-nunito"
+            )}>
+              {props.children}
+            </h3>
+          ),
+          p: (props) => (<p className="text-body hyphens-auto mt-1">{props.children}</p>)
+        }}>
+        {content}
+      </Markdown>
     </article>
   )
 }

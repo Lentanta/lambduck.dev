@@ -25,12 +25,6 @@ html {
     margin: auto;
   }
 
-  a {
-    @apply font-nunito;
-    @apply text-lg;
-    @apply leading-snug;
-  }
-
   a:hover {
     @apply underline;
     cursor: pointer;
