@@ -5,6 +5,7 @@ import { Noto_Sans, Nunito } from "next/font/google"
 
 import 'remixicon/fonts/remixicon.css'
 import "@styles/globals.css";
+import { AnimationBackground } from "@/components/AnimationBackground";
 
 type RootLayoutProps = {
   children: React.ReactNode
@@ -28,6 +29,7 @@ const RootLayout = ({ children }: RootLayoutProps) => {
   return (
     <html lang="en" className={`${nunito.variable} ${notoSans.variable}`}>
       <body className="bg-color-light h-full">
+        <AnimationBackground />
         <Header />
 
         <main className="h-full">

@@ -1,13 +1,12 @@
-import dynamic from 'next/dynamic'
 import { readFileSync } from "fs";
 import clsx from "clsx";
 import dayjs from 'dayjs';
+import Markdown from "react-markdown"
 
 import { PUBLIC_POSTS_PATH } from '@/utils/constant';
 import { markdownMetadataParser } from '@/utils/markdownMetadataParser';
 import { getReadingTime } from '../functions/getReadingTime';
 
-const Markdown = dynamic(() => import("react-markdown"));
 const ArticlePage = async ({ params }: { params: { id: string } }) => {
   const md = readFileSync(`${PUBLIC_POSTS_PATH}/${params.id}`, "utf8");
   const { metadata, content } = markdownMetadataParser(md);
@@ -24,6 +23,8 @@ const ArticlePage = async ({ params }: { params: { id: string } }) => {
       "mt-[1.3em] mb-[1.5em]",
       "lg:w-[768px] lg:px-0",
       "w-full px-3",
+      "rounded-lg",
+      "backdrop-blur"
     )}>
       <h1 className="text-title font-bold">
         {title}
