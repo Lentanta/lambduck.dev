@@ -18,7 +18,7 @@ const TitleBox = ({ text }: { text: string }) => {
 
 export const Header = () => {
   return (
-    <header className="mt-7">
+    <header className="pt-7">
       <nav className={clsx("w-ful")}>
         <div className={clsx("flex justify-center align-middle")}>
           <TitleBox text="Lambduck" />
