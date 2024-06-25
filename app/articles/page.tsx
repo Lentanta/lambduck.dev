@@ -39,7 +39,7 @@ const ArticlesPage = async () => {
       {fileNames.map((post) => {
         if (!post.publish) return <></>;
         return (
-          <div className={clsx("my-4")}>
+          <div key={post.title} className={clsx("my-4")}>
             <NextLink
               key={post.title}
               href={"/articles/" + post.fileName}
