@@ -8,7 +8,7 @@ html {
 }
 
 :root {
-  --tablet-width: 768px;
+  /* --tablet-width: 768px; */
 }
 
 @layer base {
@@ -19,6 +19,7 @@ html {
     /* Padding for the footer */
     padding-bottom: 150px;
     overflow-x: hidden;
+    background-color: #1d2021;
   }
 
   main {
@@ -27,7 +28,6 @@ html {
   }
 
   a:hover {
-    @apply underline;
     cursor: pointer;
   }
 }

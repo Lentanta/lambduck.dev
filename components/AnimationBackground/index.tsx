@@ -19,6 +19,12 @@ const sketch = (
 
   p5.draw = () => {
     p5.background("transparent");
+    p5.textSize(32);
+    p5.fill(255);
+    p5.stroke(1);
+    p5.strokeWeight(3);
+    p5.text("HELLO", 10, 10);
+
     p5.push();
     p5.translate(
       -(width / 2) + 200,
