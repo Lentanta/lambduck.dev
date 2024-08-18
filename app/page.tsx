@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import { Fragment } from 'react';
 import { LinkButton } from './components/LinkButton';
-import { WebsiteHistory } from "./sections/WebsiteHistory";
 
 export const metadata: Metadata = {
   title: 'Lentanta website',
@@ -51,12 +50,6 @@ export default function Page() {
         icon={<i className="ri-linkedin-fill text-dark-fg0 text-7xl" />}
       />
 
-      <div className="col-span-6 rounded-lg bg-dark-bg p-4">
-        <h2 className="text-xl text-dark-fg0 mb-2">Website history</h2>
-        <div>
-          <WebsiteHistory />
-        </div>
-      </div>
     </Fragment>
   );
 }
