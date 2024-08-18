@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { Fragment } from 'react';
 import { LinkButton } from './components/LinkButton';
+import { WebsiteHistory } from "./sections/WebsiteHistory";
 
 export const metadata: Metadata = {
   title: 'Lentanta website',
@@ -21,8 +22,12 @@ export default function Page() {
       </div>
 
       <div className="bg-dark-bg col-span-3 rounded-lg p-4">
-        <p className="text-xl text-dark-fg1">Information about this website:</p>
-        <p className="text-lg text-dark-fg1">I have experience as a software engineer and am passionate about game development and computer science. I enjoy creating fun, quirky software projects in my spare time and also like to draw pixel art.</p>
+        <p className="text-xl text-dark-blue1">Information about this website:</p>
+        <ul className="">
+          <li className="text-md text-dark-fg1">Version: 3.0</li>
+          <li className="text-md text-dark-fg1">Host OS: Ubuntu v22.0</li>
+          <li className="text-md text-dark-fg1">Framework: NextJS v13.4.4</li>
+        </ul>
       </div>
 
       <LinkButton
@@ -45,6 +50,13 @@ export default function Page() {
         className="bg-dark-blue1"
         icon={<i className="ri-linkedin-fill text-dark-fg0 text-7xl" />}
       />
+
+      <div className="col-span-6 rounded-lg bg-dark-bg p-4">
+        <h2 className="text-xl text-dark-fg0 mb-2">Website history</h2>
+        <div>
+          <WebsiteHistory />
+        </div>
+      </div>
     </Fragment>
   );
 }

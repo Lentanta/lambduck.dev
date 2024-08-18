@@ -3,6 +3,7 @@ import { Footer } from "@components/Footer";
 
 import { clsx } from "clsx";
 import { Noto_Sans, Nunito } from "next/font/google"
+import { ThemeProvider } from "@material-tailwind/react";
 
 import 'remixicon/fonts/remixicon.css'
 import "@styles/globals.css";
