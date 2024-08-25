@@ -26,7 +26,7 @@ const RootLayout = ({ children }: RootLayoutProps) => {
     <html lang="en" className={`${nunito.variable} ${notoSans.variable}`}>
       <body className="bg-color-dark-bg h-full">
         <main className={clsx(
-          "h-full py-[50px] w-[1300px]",
+          "h-full py-[30px] w-[1300px]",
           "grid grid-cols-6 gap-4"
         )}>
           {children}
