@@ -1,6 +1,6 @@
 export const WebsiteInformations = () => {
   return (
-    <div className="bg-dark-bg col-span-3 rounded-lg p-4">
+    <div className="bg-dark-bg col-span-full rounded-lg p-4">
 
       <div className="flex items-center gap-1">
         <i className="ri-information-fill text-dark-blue1 text-xl" />
