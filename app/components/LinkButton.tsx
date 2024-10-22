@@ -5,7 +5,7 @@ export const LinkButton = ({ href, target, icon, className }: any) => {
   return (
     <NextLink href={href} target={target}
       className={clsxm(
-        "w-full aspect-square p-5",
+        "w-full h-full p-5",
         "flex justify-center items-center",
         "rounded-lg hover:opacity-80",
         className
