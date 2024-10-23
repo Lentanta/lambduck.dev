@@ -4,7 +4,6 @@ import { LinkButton } from './components/LinkButton';
 import { WelcomeBanner } from "./sections/WelcomeBanner"
 import { WebsiteInformations } from './sections/WebsiteInformations';
 import { ColorPalette } from './sections/ColorPalette';
-import { ActionBar } from './sections/ActionBar';
 
 export const metadata: Metadata = {
   title: 'Lentanta website',
@@ -18,21 +17,21 @@ export default function Page() {
       <WebsiteInformations />
 
       <LinkButton
-        className="bg-dark-bg3 col-span-1 md:col-span-2"
+        className="bg-dark-bg3 col-span-1 md:col-span-1 md:aspect-square"
         target="_blank"
         href="https://www.github.com/Lentanta"
         icon={<i className="ri-github-fill text-dark-fg0 text-5xl md:text-7xl" />}
       />
 
       <LinkButton
-        className="bg-dark-red2 col-span-1 md:col-span-2"
+        className="bg-dark-red2 col-span-1 md:col-span-1 md:aspect-square"
         target="_blank"
         href="mailto: thanhtam180298@gmail.com"
         icon={<i className="ri-mail-fill text-dark-fg0 text-5xl md:text-7xl" />}
       />
 
       <LinkButton
-        className="bg-dark-blue1 col-span-1 md:col-span-2"
+        className="bg-dark-blue1 col-span-1 md:col-span-1 md:aspect-square"
         target="_blank"
         href="https://www.linkedin.com/in/thanh-t%C3%A2m-l%C3%AA-b95878193/"
         icon={<i className="ri-linkedin-fill text-dark-fg0 text-5xl md:text-7xl" />}

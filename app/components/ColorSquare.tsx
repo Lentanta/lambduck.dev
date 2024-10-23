@@ -1,6 +1,14 @@
+"use client"
 import clsx from "clsx"
 
 export const ColorSquare = ({ color }: { color: string }) => {
+  const handleOnClick = () => {
+    navigator.clipboard.writeText(color)
+  };
+
   return (
-    <div className={clsx("aspect-square h-full w-full md:h-[32px] md:w-[32px]", color,)} />)
+    <button className="aspect-square h-full w-full" onClick={handleOnClick}>
+      <div className={clsx("aspect-square h-full w-full", color,)} />
+    </button>
+  )
 }
