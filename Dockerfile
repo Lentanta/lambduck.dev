@@ -1,14 +1,18 @@
-FROM node:18-bullseye
+# step 1
+FROM node:18-bullseye AS builder
 
-WORKDIR /app
+WORKDIR /build
 
-COPY package.json /app
+COPY package.json /build
 RUN yarn 
 
-COPY . /app
+COPY . /build
 RUN yarn build
 
+# step 2
 FROM node:18-bullseye-slim
 WORKDIR /app
+
+COPY --from=builder /build /app
 
 CMD ["yarn", "start"]
