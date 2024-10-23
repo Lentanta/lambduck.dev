@@ -25,7 +25,8 @@ jobs:
 
             # enable corepack to using yarn
             corepack enable
-            git checkout main
+
+            # pull lastest code 
             git pull
 
             sudo docker build -t lambduck-image .
